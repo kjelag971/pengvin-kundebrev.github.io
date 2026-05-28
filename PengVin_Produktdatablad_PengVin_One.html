@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PengVin One – Produktdatablad</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #050e2b;
+    --blue-mid: #0a1f5c;
+    --blue-light: #1a4fc4;
+    --orange: #f47c20;
+    --orange-light: #ff9a45;
+    --gray-light: #f4f6fb;
+    --gray-mid: #e2e8f4;
+    --text-dark: #1a1a2e;
+    --text-mid: #4a5568;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    background: #eef2f7;
+    color: var(--text-dark);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page-wrapper {
+    max-width: 210mm;
+    margin: 20px auto 0;
+    background: #fff;
+    box-shadow: 0 8px 40px rgba(5,14,43,0.13);
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+  }
+
+  .print-footer {
+    max-width: 210mm;
+    margin: 0 auto 20px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 40px rgba(5,14,43,0.13);
+  }
+
+  /* COVER */
+  .cover {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue-mid) 60%, var(--blue-light) 100%);
+    padding: 14px 48px 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: rgba(244,124,32,0.10);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -50px; left: 30%;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(26,79,196,0.15);
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .cover-badge {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+  }
+
+  .cover h1 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: 34px;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .cover h1 span { color: var(--orange-light); }
+
+  .cover .subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+  .cover-meta-item { font-size: 11px; color: rgba(255,255,255,0.60); }
+  .cover-meta-item strong {
+    display: block;
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  /* DIVIDER */
+  .divider-bar {
+    height: 5px;
+    background: linear-gradient(90deg, var(--orange) 0%, var(--orange-light) 60%, var(--blue-light) 100%);
+  }
+
+  /* CONTENT */
+  .content { padding: 28px 40px; }
+
+  /* SECTION */
+  .section { margin-bottom: 28px; }
+
+  .section-label {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 8px;
+  }
+
+  .section h2 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--navy);
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--gray-mid);
+  }
+
+  .section p {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--text-mid);
+    margin-bottom: 10px;
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--gray-light);
+    border-radius: 8px;
+    padding: 16px 22px;
+    margin-bottom: 24px;
+    border-left: 4px solid var(--blue-light);
+  }
+  .toc h3 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--navy);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  .toc ol { list-style: none; counter-reset: toc-counter; }
+  .toc ol li {
+    counter-increment: toc-counter;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 0;
+    font-size: 14px;
+    color: var(--text-mid);
+    border-bottom: 1px dotted var(--gray-mid);
+  }
+  .toc ol li:last-child { border-bottom: none; }
+  .toc ol li::before {
+    content: counter(toc-counter);
+    width: 24px; height: 24px;
+    background: var(--blue-light);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+  .toc-dots {
+    flex: 1;
+    border-bottom: 1px dotted #b0b8cc;
+    height: 1px;
+    margin: 0 6px;
+  }
+  .toc-page { font-weight: 600; color: var(--navy); font-size: 13px; }
+
+  /* STEPS */
+  .steps {
+    display: flex;
+    gap: 0;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    min-width: 120px;
+    padding: 16px 18px;
+    background: var(--gray-light);
+    border-right: 1px solid var(--gray-mid);
+    position: relative;
+  }
+  .step:last-child { border-right: none; }
+  .step::after {
+    content: '→';
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--orange);
+    font-size: 18px;
+    font-weight: 900;
+    z-index: 2;
+  }
+  .step:last-child::after { display: none; }
+  .step-num {
+    width: 28px; height: 28px;
+    background: var(--orange);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .step-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .step-desc { font-size: 11px; color: var(--text-mid); line-height: 1.5; }
+
+  /* CALLOUT */
+  .callout {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: rgba(26,79,196,0.06);
+    border-left: 4px solid var(--blue-light);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .callout-icon { flex-shrink: 0; margin-top: 2px; }
+  .callout p {
+    font-size: 13px;
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* SERVICE CARDS GRID */
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .service-card {
+    background: var(--gray-light);
+    border: 1px solid var(--gray-mid);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .service-card-icon {
+    width: 34px; height: 34px;
+    border-radius: 8px;
+    background: rgba(26,79,196,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .service-card h4 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .service-card p {
+    font-size: 11px;
+    color: var(--text-mid);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* PRIS MOCKUP TABLE */
+  .results-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin: 14px 0;
+  }
+  .results-table th {
+    background: var(--navy);
+    color: #fff;
+    padding: 7px 10px;
+    text-align: left;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+  .results-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #eef0f5;
+    color: var(--text-dark);
+  }
+  .results-table tr:nth-child(even) td { background: #f7f9fc; }
+
+  .badge-green {
+    display: inline-block;
+    background: rgba(22,163,74,0.12);
+    color: #16a34a;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-family: 'Outfit', sans-serif;
+  }
+  .badge-yellow {
+    display: inline-block;
+    background: rgba(234,179,8,0.12);
+    color: #a16207;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  /* DETAIL TABLE */
+  .detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin: 12px 0;
+  }
+  .detail-table th {
+    background: #2d3a5e;
+    color: #fff;
+    padding: 7px 10px;
+    text-align: left;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+  .detail-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #eef0f5;
+    color: var(--text-dark);
+    font-size: 12px;
+  }
+  .detail-table tr:nth-child(even) td { background: #f7f9fc; }
+  .detail-table td:first-child { font-weight: 600; color: var(--text-mid); }
+
+  /* NOBB FIELDS */
+  .field-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 14px 0;
+  }
+  .field-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: var(--gray-light);
+    border: 1px solid var(--gray-mid);
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--text-dark);
+  }
+  .field-item .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .dot-green { background: #16a34a; }
+  .dot-gray  { background: #94a3b8; }
+
+  /* FIG CAPTION */
+  .fig-caption {
+    font-size: 12px;
+    color: var(--text-mid);
+    font-style: italic;
+    text-align: center;
+    margin-top: 8px;
+    padding-bottom: 4px;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--navy);
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .footer-contact {
+    font-size: 11px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.5;
+    text-align: right;
+  }
+  .footer-contact a { color: var(--orange-light); text-decoration: none; }
+  .footer-revised {
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    color: rgba(255,255,255,0.35);
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 4px;
+  }
+
+  /* Skjerm: skjul utskriftsheader */
+  .print-header { display: none; }
+
+  /* Side 1: ingen topp-margin (cover fyller siden helt opp) */
+  @page :first { size: A4; margin: 0; }
+  /* Side 2+: 22 mm luft øverst (16mm header + 6mm puste-rom) */
+  @page { size: A4; margin: 22mm 0 0 0; }
+
+  @media print {
+    /* Fast header på alle sider */
+    .print-header {
+      display: flex;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 16mm;
+      background: var(--navy);
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      /* Ingen border her – blender med coveret på side 1 */
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      z-index: 1000;
+    }
+
+    /* Orange-linje vises kun på side 2+ via pseudo-element */
+    .print-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--orange) 0%, var(--orange-light) 60%, var(--blue-light) 100%);
+    }
+
+    /* Side 1: cover fyller siden fra toppen.
+       Skjul logo-area (print-headeren har logoene) og
+       skyv tittelen ned slik at den starter under print-headeren. */
+    .cover .logo-area { display: none; }
+    .cover { padding-top: 16mm; }
+  }
+
+  @media print {
+    html, body {
+      margin: 0; padding: 0;
+      background: #fff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page-wrapper {
+      margin: 0;
+      box-shadow: none;
+      border-radius: 0;
+      max-width: 100%;
+      width: 100%;
+      overflow: visible;
+    }
+
+    /* Romslig bunn slik at innhold ikke skjules bak fast footer */
+    .content { padding-bottom: 90px; }
+
+    /* Seksjoner som havner øverst på en ny side starter under print-headeren */
+    .section + .section,
+    .toc + .section {
+      padding-top: 22mm;
+    }
+
+    .cover, .divider-bar {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Footer forankret til bunnen av hver side */
+    .print-footer {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      margin: 0;
+      border-radius: 0;
+      box-shadow: none;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .print-footer .divider-bar {
+      display: block;
+      height: 5px;
+      background: linear-gradient(90deg, #f47c20 0%, #ff9a45 60%, #1a4fc4 100%);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .print-footer .footer {
+      display: flex;
+      background: #050e2b;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── Hindre at seksjoner og blokker deles over sideskift ── */
+
+    /* Hele seksjon holdes på én side der det er plass */
+    .section {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    /* Tving ny side BEFORE en seksjon hvis den ellers ville bli delt */
+    .section h2 {
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    /* Enkeltkomponenter som aldri skal kuttes */
+    .toc,
+    .steps,
+    .step,
+    .callout,
+    .service-grid,
+    .service-card,
+    .results-table,
+    .detail-table,
+    .field-list,
+    .fig-caption {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    /* Dashboard-mockup: ikke kuttes over sideskift */
+    .dashboard-mockup {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      overflow: visible !important;
+    }
+
+    /* Tabellrader deles ikke */
+    tr {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    /* Seksjonsetikett og overskrift holdes alltid sammen med første avsnitt */
+    .section-label {
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    /* Blokk som alltid starter øverst på ny side med plass til fast print-header */
+    .print-page-break {
+      break-before: page;
+      page-break-before: always;
+      padding-top: 22mm;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .content { padding: 20px 16px; }
+    .cover { padding: 20px 16px; }
+    .cover h1 { font-size: 24px; }
+    .footer { padding: 12px 16px; flex-direction: column; }
+    .footer-contact { text-align: left; }
+    .service-grid { grid-template-columns: 1fr 1fr; }
+    .field-list { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Fast utskriftsheader – vises på alle sider -->
+<div class="print-header">
+  <svg style="height:22px;width:auto;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 259 88.83"><g><polygon style="fill:#fff;" points="217.67 15.93 211.38 19.23 208.9 14.5 189.59 70.68 179.68 70.68 163.16 22.5 171.42 22.5 184.63 61.73 201.47 12.14 196.68 14.65 193.38 8.36 209.31 0 217.67 15.93"/><path style="fill:#fff;" d="M36.73,38.24c0,9.46-6.42,16.08-16.96,16.08H7.79v16.36H0V22.35H19.77c10.54,0,16.96,6.36,16.96,15.89Zm-7.95,.07c0-4.9-2.96-8.49-9.3-8.49H7.79v17.07h11.71c6.34-.02,9.3-3.7,9.3-8.58h-.02Z"/><path style="fill:#fff;" d="M77.23,53.84h-30.82c.62,6.98,5.52,10.83,11.86,10.83,4.54,0,8.34-1.92,10.12-5.69h8.06c-2.96,8.49-10.22,12.52-18.25,12.52-11.52,0-19.72-8.28-19.72-19.74s8.09-19.87,19.57-19.87c12.2,0,19.92,9.46,19.18,21.95Zm-30.4-6.35h22.04c-.45-2.53-1.79-4.81-3.78-6.43-1.99-1.62-4.48-2.48-7.05-2.42-2.61-.07-5.16,.78-7.2,2.4-2.05,1.62-3.47,3.9-4.02,6.45h0Z"/><path style="fill:#fff;" d="M116.61,46.73v23.9h-7.78v-22.3c0-5.87-2.56-8.98-8.27-8.98-6.69,0-10.22,4.35-10.22,11.66v19.67h-7.84V32.71h7.79v6.29c1.26-2.24,3.1-4.09,5.34-5.34,2.24-1.25,4.77-1.87,7.34-1.77,8.54,0,13.64,5.61,13.64,14.84Z"/><path style="fill:#fff;" d="M160.37,32.71v37.55c0,11.32-7.1,18.57-18.33,18.57-9.03,0-17.23-4.7-18.88-14.16h8.05c1.32,4.9,5.52,7.18,10.62,7.18,6.96,0,10.74-3.94,10.74-11.38v-6.49c-1.43,2.21-3.39,4.01-5.7,5.26-2.31,1.24-4.9,1.88-7.53,1.85-10.12,0-17.5-8.22-17.5-19.61s7.52-19.61,17.5-19.61c2.65-.03,5.26,.63,7.58,1.91,2.32,1.28,4.27,3.14,5.65,5.4v-6.5h7.79Zm-7.72,18.79c0-7.04-5.03-12.15-11.64-12.15s-11.36,5.11-11.36,12.15,4.82,12.18,11.36,12.18,11.64-5.06,11.64-12.18Z"/><path style="fill:#fff;" d="M209.22,32.71h7.79v37.97h-7.79V32.71Z"/><path style="fill:#fff;" d="M259,46.73v23.9h-7.78v-22.3c0-5.87-2.56-8.98-8.27-8.98-6.69,0-10.22,4.35-10.22,11.66v19.67h-7.79V32.71h7.79v6.29c1.26-2.24,3.1-4.09,5.34-5.34,2.24-1.25,4.77-1.87,7.33-1.77,8.5,0,13.6,5.61,13.6,14.84Z"/></g></svg>
+
+  <span style="font-family:'Outfit',sans-serif;font-weight:700;font-size:12px;color:rgba(255,255,255,0.75);letter-spacing:0.06em;text-transform:uppercase;">PengVin One — Produktdatablad</span>
+
+  <div style="background:rgba(255,255,255,0.95);border-radius:6px;padding:3px 8px;display:flex;align-items:center;">
+    <img src="../Logo/BIG_Gruppen_Logo.png" alt="BIG Gruppen" style="height:22px;width:auto;display:block;">
+  </div>
+</div>
+
+<div class="page-wrapper">
+
+  <!-- COVER -->
+  <div class="cover">
+    <img src="../Bilder/PengVinONE_ikon.jpg" alt="PengVin ONE" style="position:absolute;top:15px;right:24px;width:200px;height:auto;border-radius:8px;z-index:2;">
+    <div class="logo-area">
+      <svg style="height:36px;width:auto;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 259 88.83"><defs><style>.lw{fill:#ffffff;}</style></defs><g><polygon class="lw" points="217.67 15.93 211.38 19.23 208.9 14.5 189.59 70.68 179.68 70.68 163.16 22.5 171.42 22.5 184.63 61.73 201.47 12.14 196.68 14.65 193.38 8.36 209.31 0 217.67 15.93"/><path class="lw" d="M36.73,38.24c0,9.46-6.42,16.08-16.96,16.08H7.79v16.36H0V22.35H19.77c10.54,0,16.96,6.36,16.96,15.89Zm-7.95,.07c0-4.9-2.96-8.49-9.3-8.49H7.79v17.07h11.71c6.34-.02,9.3-3.7,9.3-8.58h-.02Z"/><path class="lw" d="M77.23,53.84h-30.82c.62,6.98,5.52,10.83,11.86,10.83,4.54,0,8.34-1.92,10.12-5.69h8.06c-2.96,8.49-10.22,12.52-18.25,12.52-11.52,0-19.72-8.28-19.72-19.74s8.09-19.87,19.57-19.87c12.2,0,19.92,9.46,19.18,21.95Zm-30.4-6.35h22.04c-.45-2.53-1.79-4.81-3.78-6.43-1.99-1.62-4.48-2.48-7.05-2.42-2.61-.07-5.16,.78-7.2,2.4-2.05,1.62-3.47,3.9-4.02,6.45h0Z"/><path class="lw" d="M116.61,46.73v23.9h-7.78v-22.3c0-5.87-2.56-8.98-8.27-8.98-6.69,0-10.22,4.35-10.22,11.66v19.67h-7.84V32.71h7.79v6.29c1.26-2.24,3.1-4.09,5.34-5.34,2.24-1.25,4.77-1.87,7.34-1.77,8.54,0,13.64,5.61,13.64,14.84Z"/><path class="lw" d="M160.37,32.71v37.55c0,11.32-7.1,18.57-18.33,18.57-9.03,0-17.23-4.7-18.88-14.16h8.05c1.32,4.9,5.52,7.18,10.62,7.18,6.96,0,10.74-3.94,10.74-11.38v-6.49c-1.43,2.21-3.39,4.01-5.7,5.26-2.31,1.24-4.9,1.88-7.53,1.85-10.12,0-17.5-8.22-17.5-19.61s7.52-19.61,17.5-19.61c2.65-.03,5.26,.63,7.58,1.91,2.32,1.28,4.27,3.14,5.65,5.4v-6.5h7.79Zm-7.72,18.79c0-7.04-5.03-12.15-11.64-12.15s-11.36,5.11-11.36,12.15,4.82,12.18,11.36,12.18,11.64-5.06,11.64-12.18Z"/><path class="lw" d="M209.22,32.71h7.79v37.97h-7.79V32.71Z"/><path class="lw" d="M259,46.73v23.9h-7.78v-22.3c0-5.87-2.56-8.98-8.27-8.98-6.69,0-10.22,4.35-10.22,11.66v19.67h-7.79V32.71h7.79v6.29c1.26-2.24,3.1-4.09,5.34-5.34,2.24-1.25,4.77-1.87,7.33-1.77,8.5,0,13.6,5.61,13.6,14.84Z"/></g></svg>
+      <div style="background:rgba(255,255,255,0.95);border-radius:7px;padding:4px 10px;display:flex;align-items:center;transform:translateX(-400%);">
+        <img src="../Logo/BIG_Gruppen_Logo.png" alt="BIG Gruppen" style="height:30px;width:auto;display:block;">
+      </div>
+    </div>
+
+    <h1>PengVin <span>One</span></h1>
+    <p class="subtitle">Én ERP- og driftsplattform — alle felles tjenester for BIG-medlemmer</p>
+
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <strong>Modul</strong>
+        PengVin One Platform
+      </div>
+      <div class="cover-meta-item">
+        <strong>Kategori</strong>
+        ERP / Felles tjenester / BIG
+      </div>
+      <div class="cover-meta-item">
+        <strong>Revidert</strong>
+        12. mai 2026
+      </div>
+    </div>
+  </div>
+
+  <div class="divider-bar"></div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- TOC -->
+    <div class="toc">
+      <h3>Innholdsfortegnelse</h3>
+      <ol>
+        <li>Innledning – Hva er PengVin One?<span class="toc-dots"></span><span class="toc-page">1</span></li>
+        <li>Komplett Driftsløsning<span class="toc-dots"></span><span class="toc-page">2</span></li>
+        <li>Felles Prisoppdatering<span class="toc-dots"></span><span class="toc-page">3</span></li>
+        <li>NOBB Modul<span class="toc-dots"></span><span class="toc-page">4</span></li>
+        <li>Sikkerhetsdatablader (SDS)<span class="toc-dots"></span><span class="toc-page">5</span></li>
+        <li>Miljødata og Bærekraft<span class="toc-dots"></span><span class="toc-page">6</span></li>
+        <li>BIG Felles rapporter og dialoger<span class="toc-dots"></span><span class="toc-page">7</span></li>
+        <li>CRM-løsning<span class="toc-dots"></span><span class="toc-page">8</span></li>
+        <li>PIM – Felles Produktinformasjon<span class="toc-dots"></span><span class="toc-page">9</span></li>
+        <li>Dashboard og rapportering<span class="toc-dots"></span><span class="toc-page">10</span></li>
+        <li>PengVin AI – Kunstig intelligens i ERP<span class="toc-dots"></span><span class="toc-page">11</span></li>
+        <li>BIG WebShop – Logikkbygger<span class="toc-dots"></span><span class="toc-page">12</span></li>
+        <li>Integrasjon Regnskap<span class="toc-dots"></span><span class="toc-page">13</span></li>
+        <li>Elektroniske dokumenter – Faktura, Ordrebekreftelse, Leveransebekreftelse<span class="toc-dots"></span><span class="toc-page">14</span></li>
+      </ol>
+    </div>
+
+    <!-- SEKSJON 1: INNLEDNING -->
+    <div class="section">
+      <div class="section-label">Seksjon 1</div>
+      <h2>Innledning – Hva er PengVin One?</h2>
+      <p>
+        <strong>PengVin One</strong> er en komplett ERP- og driftsplattform for BIG-medlemmer.
+        Plattformen kombinerer trygg, profesjonell IT-drift (se seksjon 2) med et komplett sett av
+        felles forretningstjenester — prisoppdatering, NOBB-data, sikkerhetsdatablader,
+        miljødata, BIG-rapportering, CRM og produktinformasjon — alt i én løsning med
+        årlige oppgraderinger inkludert.
+      </p>
+      <p>
+        Alle tjenestene leveres som abonnementsmoduler. Butikkene velger selv hvilke de ønsker
+        og slipper å drifte egne integrasjoner, arkiver eller datakilder. PengVin og Aderian
+        håndterer infrastruktur, innhenting, bearbeiding, kvalitetssikring og distribusjon.
+      </p>
+      <p>
+        De fleste av modulene som vises er allerede på plass og i aktiv bruk. Enkelte moduler er under videre utvikling, og flere vil bli lansert fortløpende i takt med behov og prioriteringer.
+Samtidig jobbes det målrettet med nye løsninger som skal styrke plattformen ytterligere og bidra til å skape reelle synergier – med ambisjon om å tilby en helhetlig og fremtidsrettet løsning.
+      </p>
+
+      <div class="service-grid">
+        <div class="service-card" style="background:rgba(26,79,196,0.04);border-color:rgba(26,79,196,0.2);">
+          <div class="service-card-icon" style="background:rgba(26,79,196,0.10);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#1a4fc4" stroke-width="2"/></svg>
+          </div>
+          <h4>Komplett Driftsløsning</h4>
+          <p>SQL-, app- og webserver. Terminalserver og RemoteApp per kunde.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3v12M8 11l4 4 4-4" stroke="#f47c20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 17v1a2 2 0 002 2h12a2 2 0 002-2v-1" stroke="#f47c20" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h4>Felles Prisoppdatering</h4>
+          <p>Sentral prismotor med push-distribusjon til alle abonnenter.</p>
+        </div>
+
+        <div class="service-card" style="background:linear-gradient(135deg,rgba(168,85,247,0.06) 0%,rgba(26,79,196,0.04) 100%);border-color:rgba(168,85,247,0.25);">
+          <div class="service-card-icon" style="background:rgba(168,85,247,0.12);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#a855f7" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="#a855f7" stroke-width="2" stroke-linecap="round"/><path d="M5.64 5.64l2.12 2.12M16.24 16.24l2.12 2.12M5.64 18.36l2.12-2.12M16.24 7.76l2.12-2.12" stroke="#a855f7" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h4>AI Varegruppekobling</h4>
+          <p>Automatisk plassering av produkter i korrekt BIG-varegruppe ved import av prisfil.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-icon" style="background:rgba(96,165,250,0.10);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="7" rx="9" ry="4" stroke="#60a5fa" stroke-width="2"/><path d="M3 7v5c0 2.2 4 4 9 4s9-1.8 9-4V7" stroke="#60a5fa" stroke-width="2"/><path d="M3 12v5c0 2.2 4 4 9 4s9-1.8 9-4v-5" stroke="#60a5fa" stroke-width="2"/></svg>
+          </div>
+          <h4>NOBB Modul</h4>
+          <p>NOBB-data i felles database med valgfri feltinnkobling.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon" style="background:rgba(251,191,36,0.10);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#fbbf24" stroke-width="2" stroke-linejoin="round"/><path d="M14 2v6h6" stroke="#fbbf24" stroke-width="2"/></svg>
+          </div>
+          <h4>Sikkerhetsdatablader</h4>
+          <p>Sentralt SDS-arkiv med versjonskontroll og søk.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon" style="background:rgba(34,197,94,0.10);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-5.4 8-11A8 8 0 004 11c0 5.6 8 11 8 11z" stroke="#22c55e" stroke-width="2"/></svg>
+          </div>
+          <h4>Miljødata</h4>
+          <p>EPD og bærekraftsdata fra NOBB til alle abonnenter.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon" style="background:rgba(167,139,250,0.10);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="8" height="8" rx="2" stroke="#a78bfa" stroke-width="2"/><rect x="13" y="3" width="8" height="8" rx="2" stroke="#a78bfa" stroke-width="2" opacity="0.6"/><rect x="3" y="13" width="8" height="8" rx="2" stroke="#a78bfa" stroke-width="2" opacity="0.6"/><rect x="13" y="13" width="8" height="8" rx="2" stroke="#a78bfa" stroke-width="2" opacity="0.4"/></svg>
+          </div>
+          <h4>PIM – Produktdata</h4>
+          <p>Felles bilder, tekster og tekniske attributter.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon" style="background:rgba(244,124,32,0.08);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#f47c20" stroke-width="2"/><path d="M3 9h18" stroke="#f47c20" stroke-width="1.8"/><path d="M8 14h3M8 17h5" stroke="#f47c20" stroke-width="1.5" stroke-linecap="round"/><circle cx="17" cy="15.5" r="2.5" stroke="#f47c20" stroke-width="1.5"/></svg>
+          </div>
+          <h4>BIG Rapporter</h4>
+          <p>Kampanje, statistikkfil 15/30 og BIGARTNR-oppdatering.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon" style="background:rgba(20,184,166,0.08);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="7" r="4" stroke="#14b8a6" stroke-width="2"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2" stroke="#14b8a6" stroke-width="2" stroke-linecap="round"/><path d="M19 8l1.5 1.5L23 7" stroke="#14b8a6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h4>CRM-løsning</h4>
+          <p>DealJourney pipeline og felles kundeoppfølging for BIG.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon" style="background:rgba(99,102,241,0.10);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="9" rx="1.5" stroke="#6366f1" stroke-width="1.8"/><rect x="14" y="3" width="7" height="5" rx="1.5" stroke="#6366f1" stroke-width="1.8"/><rect x="14" y="12" width="7" height="9" rx="1.5" stroke="#6366f1" stroke-width="1.8"/><rect x="3" y="16" width="7" height="5" rx="1.5" stroke="#6366f1" stroke-width="1.8"/></svg>
+          </div>
+          <h4>Drifts‑ og kundedashboard</h4>
+          <p>Power BI-dashboard med RLS — full innsikt per kunde, ett datagrunnlag.</p>
+        </div>
+        <div class="service-card" style="background:linear-gradient(135deg,rgba(168,85,247,0.06) 0%,rgba(26,79,196,0.04) 100%);border-color:rgba(168,85,247,0.22);">
+          <div class="service-card-icon" style="background:rgba(168,85,247,0.12);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#a855f7" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="#a855f7" stroke-width="2" stroke-linecap="round"/><path d="M5.64 5.64l2.12 2.12M16.24 16.24l2.12 2.12M5.64 18.36l2.12-2.12M16.24 7.76l2.12-2.12" stroke="#a855f7" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h4>PengVin AI</h4>
+          <p>Prognose, prisoptimalisering, semantisk søk og naturlig-språk-spørring mot ERP-data.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon" style="background:rgba(244,124,32,0.10);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4" stroke="#f47c20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1.5" stroke="#f47c20" stroke-width="1.8"/><circle cx="19" cy="20" r="1.5" stroke="#f47c20" stroke-width="1.8"/><path d="M14 9h2M14 12h3" stroke="#f47c20" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h4>BIG WebShop – Logikkbygger</h4>
+          <p>Konfigurer visningsregler, kampanjelogikk og kundesegmentering i BIGs nettbutikk fra ERP.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon" style="background:rgba(16,185,129,0.10);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="8" width="6" height="8" rx="2" stroke="#10b981" stroke-width="1.8"/><rect x="16" y="8" width="6" height="8" rx="2" stroke="#10b981" stroke-width="1.8"/><path d="M8 12h8" stroke="#10b981" stroke-width="2" stroke-linecap="round"/><path d="M14 9l3 3-3 3" stroke="#10b981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h4>Integrasjon Regnskap</h4>
+          <p>Automatisk overføring av bilag og fakturaer til regnskapssystem uten dobbeltregistrering.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon" style="background:rgba(8,145,178,0.10);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#0891b2" stroke-width="2" stroke-linejoin="round"/><path d="M14 2v6h6" stroke="#0891b2" stroke-width="2"/><path d="M9 13l2 2 4-4" stroke="#0891b2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h4>Elektroniske dokumenter</h4>
+          <p>EHF-faktura, ordrebekreftelse og leveransebekreftelse via Peppol-nettverket.</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#1a4fc4"/><path d="M11 7v4M11 14v1" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <p>
+          <strong>Abonnementsbasert:</strong> Alle tjenester leveres som separate moduler. Butikken
+          abonnerer kun på det den trenger — og slipper alt driftsansvar for datakilder, integrasjoner og arkiver.
+        </p>
+      </div>
+    </div>
+
+    <!-- SEKSJON 2: DRIFT -->
+    <div class="section">
+      <div class="section-label">Seksjon 2</div>
+      <h2>Komplett Driftsløsning</h2>
+      <p>
+        PengVin One er bygget på en robust, felles driftsplattform levert i samarbeid med
+        <strong>Aderian</strong> — en ledende nordisk IT-driftleverandør med sterk lokal tilstedeværelse.
+        Infrastrukturen er dimensjonert for BIG-nettverket og dekker alt fra sentrale servere til
+        kundeunik arbeidsstasjonsdrift.
+      </p>
+
+      <!-- Bilde: Bilde_Drift_Infrastruktur.jpg -->
+      <p class="fig-caption">Figur 1 – PengVin Drift: infrastrukturoversikt med felles og kundeunik serverstruktur</p>
+
+      <table class="detail-table">
+        <thead>
+          <tr>
+            <th>Komponent</th>
+            <th>Beskrivelse</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SQL Server</td>
+            <td>Kraftig felles SQL-server for alle PengVin-databaser. Høy ytelse, automatisk sikkerhetskopiering og overvåkning døgnet rundt.</td>
+            <td>Felles</td>
+          </tr>
+          <tr>
+            <td>Applikasjonsserver</td>
+            <td>Felles applikasjonsserver kjører PengVin ERP og tilhørende tjenester. Sentralisert oppdatering sikrer at alle butikker alltid har samme versjon.</td>
+            <td>Felles</td>
+          </tr>
+          <tr>
+            <td>WebServer</td>
+            <td>Felles webserver for PengVin-portaler, API-er og nettbaserte tjenester. Skalerbar og sikret med sertifikater og brannmur.</td>
+            <td>Felles</td>
+          </tr>
+          <tr>
+            <td>AD / Print / Fil-server</td>
+            <td>Kundeunik Active Directory, filserver og printserver. Egne brukere, rettigheter og filområder per butikk — fullt isolert fra andre kunder.</td>
+            <td>Kundeunik</td>
+          </tr>
+          <tr>
+            <td>Terminalserver (RDS)</td>
+            <td>Kundeunik terminalserver for trygg fjerntilgang. Brukerne kobler seg på fra kontor, hjemmekontor eller mobil enhet.</td>
+            <td>Kundeunik</td>
+          </tr>
+          <tr>
+            <td>PengVin som publisert APP</td>
+            <td>PengVin ERP kan leveres som en publisert RemoteApp via Remote Desktop Services. Brukeren åpner ERP som et vanlig program på sin PC — uten VPN eller lokal installasjon.</td>
+            <td>Valgfritt</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-title">Infrastruktur</div>
+          <div class="step-desc">Aderian drifter hardware og nettverk i sikre datasentre</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-title">Servere</div>
+          <div class="step-desc">PengVin konfigurerer og vedlikeholder SQL-, app- og webserver</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-title">Brukertilgang</div>
+          <div class="step-desc">AD, terminalserver og RemoteApp per butikk</div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-title">Oppgraderinger</div>
+          <div class="step-desc">Årlig PengVin-oppgradering inkludert i abonnementet</div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#1a4fc4"/><path d="M11 7v4M11 14v1" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <p>
+          <strong>Aderian</strong> er PengVins driftspartner og leverer hosting, cloud, nettverk,
+          sikkerhet og support gjennom et nordisk nettverk med sterk lokal tilstedeværelse.
+          Kombinasjonen av Aderian og PengVin gir BIG-butikkene en komplett,
+          profesjonelt driftet IT-plattform — uten behov for egne serverrom eller IT-ressurser.
+        </p>
+      </div>
+
+      <div class="callout" style="background:rgba(22,163,74,0.05);border-left-color:#16a34a;">
+        <div class="callout-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#16a34a"/><path d="M6 11.5l2.5 2.5L16 7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p>
+          <strong>Nordisk samarbeid med PengVin Äffarsystems AB.</strong> Plattformen er utviklet med Norge som hovedfokus, tilpasset norske behov, arbeidsprosesser og datagrunnlag. Samtidig benytter vårt svenske søsterselskap, 
+          PengVin Affärssystem AB, den samme plattformen og datamodellen.
+          Dette legger et solid grunnlag for fremtidige synergier på tvers av landene – blant annet gjennom felles utvikling av dashboards, 
+          delte datasett og mulighet for benchmarking. Nye funksjoner og forbedringer utvikles med et nordisk perspektiv der det er naturlig, 
+          noe som over tid gir økt verdi og lavere kostnad per bruker.
+        </p>
+      </div>
+    </div>
+
+    <!-- SEKSJON 3: PRISOPPDATERING -->
+    <div class="section">
+      <div class="section-label">Seksjon 3</div>
+      <h2>Felles Prisoppdatering</h2>
+      <p>
+        PengVin mottar prisfiler direkte fra leverandørene, bearbeider og kvalitetssikrer dem sentralt,
+        og distribuerer dem automatisk til alle BIG-butikker som abonnerer på den aktuelle leverandøren.
+        Ingen manuell filbehandling — kunden får en klar, godkjent fil klar til innlesing.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-title">Mottak</div>
+          <div class="step-desc">PengVin mottar fil fra leverandør</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-title">Bearbeiding</div>
+          <div class="step-desc">kvalitettsikrer, beriking og normalisering</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-title">Push</div>
+          <div class="step-desc">Varsling sendes til alle abonnenter</div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-title">Innlesing</div>
+          <div class="step-desc">Direkte inn i Sortimentsvedlikehold</div>
+        </div>
+      </div>
+
+      <!-- Bilde: Bilde_Prisoppdatering_Dialog.jpg -->
+      <p class="fig-caption">Figur 2 – Prisfil-dialog i PengVin ERP: oversikt over tilgjengelige filer med leverandør, dato og status</p>
+
+      <p>
+        Dialogen i PengVin viser en komplett oversikt over alle tilgjengelige prisfiler for butikkens
+        leverandører — med leverandørnavn, publiseringsdato, antall produkter og publiseringsstatus.
+      </p>
+
+      <table class="results-table">
+        <thead>
+          <tr>
+            <th>Leverandør</th>
+            <th>Dato</th>
+            <th>Ant. produkter</th>
+            <th>Nye</th>
+            <th>Utgåtte</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Bosch</strong></td>
+            <td>15.01.2026</td>
+            <td>1 243</td>
+            <td style="color:#16a34a;font-weight:600;">+47</td>
+            <td style="color:#dc2626;font-weight:600;">23</td>
+            <td><span class="badge-green">Publisert</span></td>
+          </tr>
+          <tr>
+            <td><strong>Helly Hansen</strong></td>
+            <td>12.01.2026</td>
+            <td>3 810</td>
+            <td style="color:#16a34a;font-weight:600;">+112</td>
+            <td style="color:#dc2626;font-weight:600;">8</td>
+            <td><span class="badge-green">Publisert</span></td>
+          </tr>
+          <tr>
+            <td><strong>Stanley / DeWalt</strong></td>
+            <td>10.01.2026</td>
+            <td>892</td>
+            <td>–</td>
+            <td>–</td>
+            <td><span class="badge-yellow">Under arbeid</span></td>
+          </tr>
+          <tr>
+            <td><strong>Makita</strong></td>
+            <td>08.01.2026</td>
+            <td>2 105</td>
+            <td style="color:#16a34a;font-weight:600;">+63</td>
+            <td style="color:#dc2626;font-weight:600;">14</td>
+            <td><span class="badge-green">Publisert</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Ved å velge en prisfil får man umiddelbart statistikk over nye produkter, utgåtte varer og
+        eventuelle kvantumspriser som mangler i ERP. Innlesing i Sortimentsvedlikehold skjer med ett klikk.
+      </p>
+
+      <div class="callout">
+        <div class="callout-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#f47c20"/><path d="M7 11l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p>
+          Ekstra kontroll: systemet avdekker automatisk <strong>kvantumspriser</strong> som mangler i ERP,
+          <strong>utgåtte produkter</strong> som fortsatt er aktive i sortimentet, og
+          <strong>prisendringer</strong> over definert terskelverdi — før innlesing.
+        </p>
+      </div>
+
+      <!-- AI-tillegg: varegruppekobling -->
+      <div style="margin-top:18px;border-radius:10px;overflow:hidden;border:2px solid rgba(168,85,247,0.30);box-shadow:0 2px 12px rgba(168,85,247,0.10);">
+
+        <!-- Header-stripe -->
+        <div style="background:linear-gradient(90deg,#6d28d9 0%,#a855f7 60%,#1a4fc4 100%);padding:10px 18px;display:flex;align-items:center;gap:10px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#fff" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M5.64 5.64l2.12 2.12M16.24 16.24l2.12 2.12M5.64 18.36l2.12-2.12M16.24 7.76l2.12-2.12" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span style="font-family:'Outfit',sans-serif;font-weight:800;font-size:12px;color:#fff;letter-spacing:1.5px;text-transform:uppercase;">PengVin AI — Automatisk varegruppekobling</span>
+          <span style="margin-left:auto;background:rgba(255,255,255,0.20);border:1px solid rgba(255,255,255,0.40);border-radius:20px;padding:2px 10px;font-family:'Outfit',sans-serif;font-weight:700;font-size:10px;color:#fff;letter-spacing:1px;text-transform:uppercase;">Viktig</span>
+        </div>
+
+        <!-- Innhold -->
+        <div style="background:linear-gradient(135deg,rgba(168,85,247,0.05) 0%,rgba(26,79,196,0.04) 100%);padding:16px 18px;">
+          <p style="font-size:13px;color:#1a1a2e;line-height:1.65;margin-bottom:12px;">
+            En av de mest tidkrevende og feilutsatte delene av prisfilbehandlingen er å plassere leverandørens produkter i <strong>korrekt BIG-varegruppe</strong>. 
+            Leverandørene bruker egne kategorier og beskrivelser som sjelden samsvarer direkte med BIG-systemet — dette krever normalt mye manuelt arbeid og faglig skjønn.
+          </p>
+          <p style="font-size:13px;color:#1a1a2e;line-height:1.65;margin-bottom:14px;">
+            PengVin AI løser dette automatisk: en trent modell analyserer produktbeskrivelse, artikkelnummer og leverandørkategori, 
+            og foreslår korrekt BIG-varegruppe for hvert enkelt produkt — allerede under bearbeidingssteget i steg 2 av flyten over.
+          </p>
+
+          <!-- Tre nøkkelpunkter -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:4px;">
+            <div style="background:#fff;border:1px solid rgba(168,85,247,0.18);border-radius:8px;padding:12px 14px;text-align:center;">
+              <div style="font-family:'Outfit',sans-serif;font-weight:900;font-size:26px;color:#7c3aed;line-height:1;">~90 %</div>
+              <div style="font-size:10.5px;color:#4a5568;margin-top:4px;line-height:1.4;">av produktene kobles<br>korrekt uten manuell inngripen</div>
+            </div>
+            <div style="background:#fff;border:1px solid rgba(168,85,247,0.18);border-radius:8px;padding:12px 14px;text-align:center;">
+              <div style="font-family:'Outfit',sans-serif;font-weight:900;font-size:26px;color:#7c3aed;line-height:1;">−80 %</div>
+              <div style="font-size:10.5px;color:#4a5568;margin-top:4px;line-height:1.4;">kortere behandlingstid<br>per leverandørprisfil</div>
+            </div>
+            <div style="background:#fff;border:1px solid rgba(168,85,247,0.18);border-radius:8px;padding:12px 14px;text-align:center;">
+              <div style="font-family:'Outfit',sans-serif;font-weight:900;font-size:26px;color:#7c3aed;line-height:1;">100 %</div>
+              <div style="font-size:10.5px;color:#4a5568;margin-top:4px;line-height:1.4;">sporbarhet — AI-forslag<br>logges og kan overprøves</div>
+            </div>
+          </div>
+
+          <p style="font-size:11px;color:#7c3aed;font-style:italic;margin-top:10px;text-align:center;">
+            Produkter AI er usikker på flagges for manuell gjennomgang — ingen feil glir gjennom uoppdaget.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SEKSJON 4: NOBB -->
+    <div class="section">
+      <div class="section-label">Seksjon 4</div>
+      <h2>NOBB Modul</h2>
+      <p>
+        NOBB-data hentes og vedlikeholdes i en felles, sentral database av PengVin. Alle BIG-butikker
+        som abonnerer på modulen får tilgang til alltid oppdatert produktinformasjon fra NOBB-registeret —
+        uten å drifte egne integrasjoner mot NOBB.
+      </p>
+      <p>
+        Kunden velger selv hvilke datafelter som skal kobles inn i ERP-systemet. Fleksibel konfigurasjon
+        per produktkategori gjør det enkelt å koble inn akkurat det man trenger.
+      </p>
+
+      <!-- Bilde: Bilde_NOBB_Feltinnkobling.jpg -->
+      <p class="fig-caption">Figur 3 – NOBB feltinnkobling: velg hvilke NOBB-felter som kobles inn i ERP per produktkategori</p>
+
+      <p><strong>Tilgjengelige NOBB-felter for innkobling:</strong></p>
+      <div class="field-list">
+        <div class="field-item"><div class="dot dot-green"></div>Produktnavn og beskrivelse</div>
+        <div class="field-item"><div class="dot dot-green"></div>EAN-kode / strekkode</div>
+        <div class="field-item"><div class="dot dot-green"></div>Produktbilder (alle vinkler)</div>
+        <div class="field-item"><div class="dot dot-green"></div>Mål og vekt (netto/brutto)</div>
+        <div class="field-item"><div class="dot dot-green"></div>Varegruppenummer og klassifisering</div>
+        <div class="field-item"><div class="dot dot-gray"></div>Tekniske attributter (ETIM)</div>
+        <div class="field-item"><div class="dot dot-gray"></div>Forpakningstall og pall-info</div>
+        <div class="field-item"><div class="dot dot-gray"></div>Opprinnelsesland og tullnummer</div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#1a4fc4"/><path d="M11 7v4M11 14v1" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <p>
+          Endringer i NOBB-registeret plukkes automatisk opp og distribueres til alle tilkoblede kunder.
+          Sist synkronisert vises på produktkortet — typisk oppdatert daglig ved åpningstid.
+        </p>
+      </div>
+    </div>
+
+    <!-- SEKSJON 5: SDS -->
+    <div class="section">
+      <div class="section-label">Seksjon 5</div>
+      <h2>Sikkerhetsdatablader (SDS)</h2>
+      <p>
+        Alle sikkerhetsdatablad — hentet fra NOBB, leverandørportaler og andre godkjente kilder —
+        samles og vedlikeholdes i ett sentralt arkiv. Abonnenter får søkbar tilgang til gjeldende SDS
+        for alle produkter i sortimentet, direkte fra PengVin ERP.
+      </p>
+
+      <!-- Bilde: Bilde_SDS_Soek.jpg -->
+      <p class="fig-caption">Figur 4 – SDS-søk i PengVin ERP: finn gjeldende datablad på artikkelnummer eller produktnavn</p>
+
+      <table class="detail-table">
+        <thead>
+          <tr>
+            <th>Funksjon</th>
+            <th>Beskrivelse</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Søk på art.nr</td>
+            <td>Finn riktig SDS umiddelbart via artikkelnummer eller produktnavn</td>
+          </tr>
+          <tr>
+            <td>Versjonskontroll</td>
+            <td>Versjonshåndtering — nye versjoner sendes automatisk til kundene som har kjøpt produktet</td>
+          </tr>
+          
+          <tr>
+            <td>Direktelenke fra ERP</td>
+            <td>SDS vises i utleveranse når produktet selges — vis med ett klikk</td>
+          </tr>          
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <div class="callout-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#f47c20"/><path d="M7 11l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p>
+          HMS-krav oppfylles automatisk. Ingen manuelle nedlastinger, ingen utdaterte versjoner —
+          alltid gjeldende SDS tilgjengelig for alle produkter i sortimentet.
+        </p>
+      </div>
+    </div>
+
+    <!-- SEKSJON 6: MILJØDATA -->
+    <div class="section">
+      <div class="section-label">Seksjon 6</div>
+      <h2>Miljødata og Bærekraft (*krever ekstra lisens hos NOBB)</h2>
+      <p>
+        Miljø- og bærekraftsdata hentes fra NOBB og gjøres tilgjengelig for alle abonnenter.
+        EPD-er, karbonfotavtrykk, resirkuleringsandel og miljømerking er strukturert og klar til bruk
+        i ERP og nettbutikk — uten eget driftsansvar.
+      </p>
+
+      <!-- Bilde: Bilde_Miljodata_Produktkort.jpg -->
+      <p class="fig-caption">Figur 5 – Miljødata på produktkort: CO₂-avtrykk, EPD, miljømerke og resirkuleringsandel</p>
+
+      <table class="detail-table">
+        <thead>
+          <tr>
+            <th>Dataelement</th>
+            <th>Kilde</th>
+            <th>Bruksområde</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CO₂-avtrykk (kg CO₂e)</td>
+            <td>NOBB / EPD</td>
+            <td>Nettbutikk, anbud, CSRD-rapportering</td>
+          </tr>
+          <tr>
+            <td>Resirkulert innhold (%)</td>
+            <td>NOBB</td>
+            <td>Produktkort, grønn innkjøpsdok.</td>
+          </tr>
+          <tr>
+            <td>Resirkulerbar (J/N)</td>
+            <td>NOBB</td>
+            <td>Produktkort og sorteringsveiledning</td>
+          </tr>
+          <tr>
+            <td>Miljømerke</td>
+            <td>NOBB</td>
+            <td>Svanemerket, EU Ecolabel m.fl.</td>
+          </tr>
+          <tr>
+            <td>EPD-dokument (PDF)</td>
+            <td>EPD-Norge / NOBB</td>
+            <td>Anbudsvedlegg, CSRD, kundedok.</td>
+          </tr>
+          <tr>
+            <td>Farlig stoff-klassifisering</td>
+            <td>NOBB / SDS</td>
+            <td>HMS, avfallshåndtering</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <div class="callout-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#16a34a"/><path d="M7 11l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p>
+          <strong>CSRD-klar fra dag én.</strong> Krav til bærekraftsrapportering øker for alle ledd i
+          verdikjeden. Med PengVin One har du strukturerte miljødata for hele sortimentet — klart for
+          EU-rapportering og grønn innkjøpsdokumentasjon.
+        </p>
+      </div>
+    </div>
+
+    <!-- SEKSJON 7: BIG RAPPORTER -->
+    <div class="section">
+      <div class="section-label">Seksjon 7</div>
+      <h2>BIG Felles rapporter og dialoger</h2>
+      <p>
+        PengVin One samler alle BIG-rapporter og datautvekslinger i én felles modulpakke.
+        Rapportene kjøres direkte fra PengVin ERP og leverer data i riktig format til BIG —
+        automatisk og uten manuell bearbeiding.
+      </p>
+
+      <!-- Bilde: Bilde_BIG_Rapporter_Oversikt.jpg -->
+      <p class="fig-caption">Figur 7 – BIG rapportmodul: oversikt over tilgjengelige rapporter og dialoger i PengVin ERP</p>
+
+      <table class="detail-table">
+        <thead>
+          <tr>
+            <th>Rapport / Dialog</th>
+            <th>Beskrivelse</th>
+            <th>Frekvens</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Kampanjerapportering</td>
+            <td>Henter salg per BIGLINE-kampanje med leverandør, artikkelnummer, antall og beløp. Eksporteres i BIG-format klar for levering.</td>
+            <td>Ved behov</td>
+          </tr>
+          <tr>
+            <td>BIGARTNR – Filhenting og oppdatering</td>
+            <td>Henter BIG artikkelnummerfil og oppdaterer kobling mellom BIG-artnr og lokalt artikkelnummer direkte i PengVin sortiment.</td>
+            <td>Ved oppdatering</td>
+          </tr>
+          <tr>
+            <td>BIG Statistikk – Fil 15</td>
+            <td>Standard statistikkfil 15 sendes automatisk til BIG. Inneholder salgsdata per varelinje i BIG-format.</td>
+            <td>Månedlig (15.)</td>
+          </tr>
+          <tr>
+            <td>BIG Statistikk – Fil 30</td>
+            <td>Standard statistikkfil 30 med lagerbeholdning og omsetning per BIG-artikkelnummer.</td>
+            <td>Månedlig (30.)</td>
+          </tr>
+          <tr>
+            <td>Ny rapport: Dashboard m/KPI og nyhetsfeed</td>
+            <td>Samler de viktigste nøkkeltallene (omsetning, margin, lagerstatus) og viser systemoppdateringer og nyheter direkte i PengVin. Nyhetsfeed med kategoriserte meldinger — oppdateringer, varsler og nye funksjoner.</td>
+            <td>Kontinuerlig</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <div class="callout-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#f47c20"/><path d="M7 11l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p>
+          <strong>Automatisk leveranse.</strong> BIG statistikkfilene (fil 15 og fil 30) genereres og sendes
+          automatisk hver måned uten manuell oppfølging. Kampanjerapporter og BIGARTNR-oppdateringer
+          kjøres på forespørsel direkte fra dialogen i PengVin.
+        </p>
+      </div>
+
+      <!-- Nyhetsfeed mockup -->
+      <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-mid);margin:22px 0 10px;">
+        Forhåndsvisning – Nyhetsfeed i dashboard
+      </div>
+      <div class="dashboard-mockup" style="background:#0d1526;border-radius:10px;padding:18px 20px;margin-bottom:6px;">
+        <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:14px;">NYHETER</div>
+
+        <!-- NY RAPPORT -->
+        <div style="background:#172035;border-radius:8px;padding:14px 16px;margin-bottom:9px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
+            <span style="background:#1a4fc4;color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;padding:3px 9px;border-radius:4px;">NY RAPPORT</span>
+            <span style="font-size:11px;color:rgba(255,255,255,0.40);">10.05</span>
+          </div>
+          <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;color:#fff;margin-bottom:5px;">Nytt dashboard med KPI'er og nyhetsfeed</div>
+          <div style="font-size:11.5px;color:rgba(255,255,255,0.58);line-height:1.5;margin-bottom:10px;">Samler de viktigste nøkkeltallene og holder deg oppdatert med systemoppdateringer direkte i PengVin.</div>
+          <span style="font-family:'Outfit',sans-serif;font-size:11px;color:rgba(255,255,255,0.42);background:#1e2d48;border-radius:5px;padding:5px 12px;">Les mer →</span>
+        </div>
+
+        <!-- UPDATE -->
+        <div style="background:#172035;border-radius:8px;padding:14px 16px;margin-bottom:9px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
+            <span style="background:#1a4fc4;color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;padding:3px 9px;border-radius:4px;">UPDATE</span>
+            <span style="font-size:11px;color:rgba(255,255,255,0.40);">08.05</span>
+          </div>
+          <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;color:#fff;margin-bottom:5px;">Ny prisfil – Robert Bosch</div>
+          <div style="font-size:11.5px;color:rgba(255,255,255,0.58);line-height:1.5;margin-bottom:10px;">Komplett prisfil som er kontrollert og bereiket med BIG VGR og rabattgruppe.</div>
+          <span style="font-family:'Outfit',sans-serif;font-size:11px;color:rgba(255,255,255,0.42);background:#1e2d48;border-radius:5px;padding:5px 12px;">Les mer →</span>
+        </div>
+
+        <!-- ALERT -->
+        <div style="background:#172035;border-radius:8px;padding:14px 16px;margin-bottom:9px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
+            <span style="background:#dc2626;color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;padding:3px 9px;border-radius:4px;">ALERT</span>
+            <span style="font-size:11px;color:rgba(255,255,255,0.40);">08.05</span>
+          </div>
+          <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;color:#fff;margin-bottom:5px;">Vedlikeholdsvindu 15. mai kl. 22–02</div>
+          <div style="font-size:11.5px;color:rgba(255,255,255,0.58);line-height:1.5;margin-bottom:10px;">Systemet vil være utilgjengelig for planlagt vedlikehold natt til 15. mai. Ingen data går tapt.</div>
+          <span style="font-family:'Outfit',sans-serif;font-size:11px;color:rgba(255,255,255,0.42);background:#1e2d48;border-radius:5px;padding:5px 12px;">Les mer →</span>
+        </div>
+
+        <!-- FEATURE -->
+        <div style="background:#172035;border-radius:8px;padding:14px 16px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
+            <span style="background:#7c3aed;color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;padding:3px 9px;border-radius:4px;">FEATURE</span>
+            <span style="font-size:11px;color:rgba(255,255,255,0.40);">05.05</span>
+          </div>
+          <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;color:#fff;margin-bottom:5px;">Ny funksjon: Kategoridiagram</div>
+          <div style="font-size:11.5px;color:rgba(255,255,255,0.58);line-height:1.5;margin-bottom:10px;">Se omsetning per BIG-varegruppe som sektordiagram direkte i dashboardet. Klikk for å drille ned per periode.</div>
+          <span style="font-family:'Outfit',sans-serif;font-size:11px;color:rgba(255,255,255,0.42);background:#1e2d48;border-radius:5px;padding:5px 12px;">Les mer →</span>
+        </div>
+      </div>
+      <p class="fig-caption">Figur 7b – Nyhetsfeed i PengVin-dashboardet: oppdateringer, varsler og nye funksjoner kategorisert og datostemplet.</p>
+    </div>
+
+    <!-- SEKSJON 8: CRM -->
+    <div class="section">
+      <div class="section-label">Seksjon 8</div>
+      <h2>CRM-løsning*</h2>
+      <p>
+        PengVin One inkluderer en felles CRM-modul som gir BIG-butikkene strukturerte verktøy
+        for kundeoppfølging, salgsprosess og kundeinformasjon — standardisert på tvers av nettverket
+        og integrert direkte med ERP-dataene.
+      </p>
+
+      <!-- Bilde: Bilde_CRM_Oversikt.jpg -->
+      <p class="fig-caption">Figur 8 – CRM-oversikt: kundeliste, aktiviteter og salgsmuligheter i PengVin One CRM</p>
+
+      <table class="detail-table">
+        <thead>
+          <tr>
+            <th>Funksjon</th>
+            <th>Beskrivelse</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Under utvikling</td>
+            <td>Vi holder på med å se på ny løsning som vi kommer til å komme med mer informasjon om</td>
+          </tr>
+          tr>
+            <td>Felles standardisering</td>
+            <td>Felles CRM-struktur for alle BIG-butikker — samme felt, prosesser og rapporteringsformat på tvers av nettverket. Muliggjør sammenligning og samarbeid.</td>
+          </tr>
+          <tr>
+            <td>DealJourney</td>
+            <td>Visuell pipeline for salgsmuligheter. Spor hver deal fra første kontakt til avsluttet salg — med historikk, notater, kontaktpersoner og tilknyttede tilbud fra PengVin.</td>
+          </tr>
+          <tr>
+            <td>Kundekort</td>
+            <td>Samlet kundeprofil med kontaktinfo, kjøpshistorikk fra ERP, aktive salgsmuligheter og logg over all kommunikasjon og aktivitet.</td>
+          </tr>
+          <tr>
+            <td>Aktivitetsoppfølging</td>
+            <td>Planlagte møter, samtaler og oppgaver kobles til kunder og deals. Varsler sikrer at ingen oppfølging faller mellom stoler.</td>
+          </tr>
+          <tr>
+            <td>Rapportering</td>
+            <td>Salgspipeline-rapport, vunnet/tapt-analyse og aktivitetsstatistikk — tilgjengelig for butikkleder og sentralt for BIG.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <div class="callout-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#1a4fc4"/><path d="M11 7v4M11 14v1" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <p>
+          Vi ser på nytt CRM porgram fra <strong>DealJourney</strong> 
+          Dette skal gi selgerne ett sted å holde oversikt over hele salgsprosessen —
+          fra prospekt til signert avtale. Kobling til PengVin ERP betyr at tilbud, ordrer og
+          kundehistorikk alltid er tilgjengelig direkte i CRM-bildet.
+        </p>
+      </div>
+    </div>
+
+    <!-- SEKSJON 9: PIM -->
+    <div class="section">
+      <div class="section-label">Seksjon 9</div>
+      <h2>PIM – Felles Produktinformasjon</h2>
+      <p>
+        PengVin One PIM gir alle BIG-butikker tilgang til rik, felles produktinformasjon — bilder,
+        lange tekster, tekniske attributter og merkingsdata — direkte i ERP og på tvers av salgskanaler.
+        Produktdata registreres én gang og er tilgjengelig for hele nettverket.
+      </p>
+
+      <!-- Bilde: Bilde_PIM_Produktkort.jpg -->
+      <p class="fig-caption">Figur 9 – PIM produktkort: bilder, beskrivelse, attributter og kategorier samlet på ett sted</p>
+
+      <table class="detail-table">
+        <thead>
+          <tr>
+            <th>PIM-funksjon</th>
+            <th>Innhold</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Produktbilder</td>
+            <td>Primærbilde, detaljer, montering og pakningsbilde — automatisk synkronisert</td>
+          </tr>
+          <tr>
+            <td>Lange produkttekster</td>
+            <td>Markedsføringsbeskrivelse, monteringsanvisning, teknisk bakgrunn — flerspråklig</td>
+          </tr>
+          <tr>
+            <td>Tekniske attributter</td>
+            <td>Strukturerte attributtskjema per kategori — ETIM og GS1 kompatibelt</td>
+          </tr>
+          <tr>
+            <td>Kategorier og tagger</td>
+            <td>Hierarkisk produktklassifisering og friteksttagger</td>
+          </tr>
+          <tr>
+            <td>Versjonering</td>
+            <td>Historikk over alle endringer med tidsstempel og publish-kontroll</td>
+          </tr>
+          <tr>
+            <td>Distribusjon</td>
+            <td>Kobles direkte til ERP, nettbutikk og andre salgskanaler</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <div class="callout-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#1a4fc4"/><path d="M11 7v4M11 14v1" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <p>
+          <strong>Delt kunnskap — én gang.</strong> 
+          Når ett BIG-medlem registrerer eller oppdaterer produktdata i løsningen, blir dette automatisk tilgjengelig for alle som abonnerer på PIM.
+Dette betyr at verdifullt arbeid gjøres én gang – og deles på tvers av hele nettverket. Endringer fra leverandører oppdateres samtidig for alle, noe som sikrer konsistente data, reduserer manuelt arbeid og gir raskere tilgang til oppdatert informasjon i alle butikker.
+Resultatet er bedre datakvalitet, mer effektiv drift og en løsning som skaper reell verdi gjennom samarbeid i kjeden.
+        </p>
+      </div>
+    </div>
+
+    <!-- SEKSJON 10: DRIFTS- OG KUNDEDASHBOARD -->
+    <div class="section">
+      <div class="section-label">Seksjon 10</div>
+      <h2>Dashboard og rapportering - kunde unikt*</h2>
+      <p>
+        Vår driftsplattform gir sanntidsinnsikt i ERP-drift, support og integrasjoner — samlet på
+        ett sted. Løsningen er bygget på <strong>Microsoft Power BI Pro</strong> med
+        <strong>Row Level Security (RLS)</strong>, slik at samme datagrunnlag og dashboards trygt
+        kan brukes for flere kunder med full dataisolasjon per kunde.
+        Resultatet er bedre kontroll, lavere kostnader og minimal administrasjon.
+      </p>
+      <p style="font-size:12px;font-style:italic;color:var(--text-mid);">
+        Én felles driftsplattform – trygg deling, full innsikt og lav kost per kunde.
+      </p>
+
+      <!-- Bilde: Bilde_Dashboard_Oversikt.jpg -->
+      <p class="fig-caption">Figur 10 – Power BI-dashboard: ERP-drift, support og integrasjonsstatus samlet i én visning</p>
+
+      <div class="field-list" style="grid-template-columns:1fr 1fr 1fr;gap:10px;margin:18px 0;">
+        <div style="background:rgba(26,79,196,0.05);border:1px solid rgba(26,79,196,0.18);border-radius:8px;padding:14px 16px;">
+          <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:11px;color:var(--blue-light);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;">ERP – Drift &amp; stabilitet</div>
+          <ul style="list-style:none;font-size:12px;color:var(--text-mid);line-height:1.8;">
+            <li>▸ Systemstatus og tilgjengelighet</li>
+            <li>▸ Prosesser: kjøretid, stopp og feil</li>
+            <li>▸ Antall bilag, ordre og transaksjoner</li>
+            <li>▸ Avvik i datakvalitet og bokføring</li>
+            <li>▸ Status på integrerte prosesser</li>
+          </ul>
+        </div>
+        <div style="background:rgba(244,124,32,0.05);border:1px solid rgba(244,124,32,0.20);border-radius:8px;padding:14px 16px;">
+          <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:11px;color:var(--orange);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;">PengVin bestilling og ordre</div>
+          <div style="font-size:10px;font-weight:700;color:var(--text-dark);margin-bottom:3px;">Bestillingsoversikt</div>
+          <ul style="list-style:none;font-size:12px;color:var(--text-mid);line-height:1.8;margin-bottom:8px;">
+            <li>▸ For sent leverte bestillinger</li>
+            <li>▸ Antall åpne bestillinger</li>
+          </ul>
+          <div style="font-size:10px;font-weight:700;color:var(--text-dark);margin-bottom:3px;">Ordreoversikt</div>
+          <ul style="list-style:none;font-size:12px;color:var(--text-mid);line-height:1.8;margin-bottom:8px;">
+            <li>▸ Nye ordrer</li>
+            <li>▸ Restordre</li>
+          </ul>
+          <div style="font-size:10px;font-weight:700;color:var(--text-dark);">Faktura</div>
+        </div>
+        <div style="background:rgba(99,102,241,0.05);border:1px solid rgba(99,102,241,0.18);border-radius:8px;padding:14px 16px;">
+          <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:11px;color:#6366f1;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;">Integrasjoner – Kontroll på dataflyt</div>
+          <ul style="list-style:none;font-size:12px;color:var(--text-mid);line-height:1.8;">
+            <li>▸ Status per integrasjon (OK / Feil)</li>
+            <li>▸ Antall meldinger og transaksjoner</li>
+            <li>▸ Feilrate og feiltyper</li>
+            <li>▸ Forsinkede eller stoppede køer</li>
+            <li>▸ Automatiske varsler ved avvik</li>
+          </ul>
+        </div>
+      </div>
+
+      <table class="detail-table">
+        <thead>
+          <tr>
+            <th>Funksjon / Egenskap</th>
+            <th>Beskrivelse</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Row Level Security (RLS)</td>
+            <td>Én felles datamodell og ett sett dashboards — hver kunde ser kun sine egne data. Ingen duplisering av rapporter, minimal administrasjon og høy datasikkerhet.</td>
+          </tr>
+          <tr>
+            <td>Plattform</td>
+            <td>Microsoft Power BI Pro + Microsoft 365 / Entra ID. Sentral drift uten lokale installasjoner. Kundene trenger ikke egne Power BI-lisenser for visning.</td>
+          </tr>
+          <tr>
+            <td>Skalerbarhet</td>
+            <td>Perfekt for 5–10 kunder og svært godt egnet for videre skalering. Nye kunder kobles på uten nye dashboards.</td>
+          </tr>
+          <tr>
+            <td>Typiske bruksområder</td>
+            <td>ERP-leverandører, drift- og MSP-miljøer, integrasjonspartnere, konsern med flere selskaper.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <div class="callout-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#6366f1"/><path d="M7 11l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p>
+          <strong>Fremtidsrettet og skalerbar.</strong> Dashboardløsningen er klar for utvidelse med
+          kundeportaler, embedded dashboards og avansert analyse — og bruker eksisterende
+          Microsoft-lisenser for lav totalkostnad.
+        </p>
+      </div>
+
+    </div><!-- /seksjon 10 -->
+
+    <!-- DASHBOARD EKSEMPEL – egen .section slik at .section+.section gir korrekt padding-top ved utskrift -->
+    <div class="section">
+      <div class="dashboard-mockup" style="margin:0 0 4px;border:1.5px solid #d0d7eb;border-radius:10px;overflow:visible;box-shadow:0 3px 16px rgba(5,14,43,0.11);font-family:'DM Sans',sans-serif;break-inside:avoid;page-break-inside:avoid;">
+
+        <!-- Dashboard header -->
+        <div style="background:var(--navy);padding:9px 16px;display:flex;justify-content:space-between;align-items:center;overflow:hidden;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="9" rx="1.5" fill="rgba(255,255,255,0.25)"/><rect x="14" y="3" width="7" height="5" rx="1.5" fill="rgba(255,255,255,0.25)"/><rect x="14" y="12" width="7" height="9" rx="1.5" fill="#f47c20"/><rect x="3" y="16" width="7" height="5" rx="1.5" fill="rgba(255,255,255,0.25)"/></svg>
+            <span style="font-family:'Outfit',sans-serif;font-weight:700;font-size:12px;color:#fff;letter-spacing:0.04em;">Kundeordre Oversikt</span>
+            <span style="background:rgba(244,124,32,0.25);color:#ff9a45;font-size:9px;font-family:'Outfit',sans-serif;font-weight:700;padding:1px 7px;border-radius:8px;letter-spacing:0.5px;">LIVE</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <span style="font-size:9.5px;color:rgba(255,255,255,0.50);">Kunde: <strong style="color:rgba(255,255,255,0.80);">BIG Eksempel AS</strong></span>
+            <span style="font-size:9.5px;color:rgba(255,255,255,0.40);">24. apr 2026 · 14:32</span>
+          </div>
+        </div>
+
+        <!-- Gradient stripe -->
+        <div style="height:3px;background:linear-gradient(90deg,#f47c20 0%,#ff9a45 55%,#6366f1 100%);"></div>
+
+        <!-- KPI-kort rad -->
+        <div style="display:grid;grid-template-columns:repeat(6,1fr);background:#f4f6fb;border-bottom:1px solid #dde3f0;">
+
+          <div style="padding:10px 12px;border-right:1px solid #dde3f0;text-align:center;">
+            <div style="font-size:9px;color:#6b7a99;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:3px;">Nye ordre i dag</div>
+            <div style="font-family:'Outfit',sans-serif;font-weight:900;font-size:24px;color:#050e2b;line-height:1;">23</div>
+            <div style="font-size:9px;color:#16a34a;margin-top:2px;">▲ vs 22 i fjor</div>
+          </div>
+
+          <div style="padding:10px 12px;border-right:1px solid #dde3f0;text-align:center;">
+            <div style="font-size:9px;color:#6b7a99;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:3px;">Åpne ordrer</div>
+            <div style="font-family:'Outfit',sans-serif;font-weight:900;font-size:24px;color:#050e2b;line-height:1;">67</div>
+            <div style="font-size:9px;color:#6b7a99;margin-top:2px;">venter på beh.</div>
+          </div>
+
+          <div style="padding:10px 12px;border-right:1px solid #dde3f0;text-align:center;background:rgba(220,38,38,0.04);">
+            <div style="font-size:9px;color:#6b7a99;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:3px;">forsinkede</div>
+            <div style="font-family:'Outfit',sans-serif;font-weight:900;font-size:24px;color:#dc2626;line-height:1;">8</div>
+            <div style="font-size:9px;color:#dc2626;margin-top:2px;">⚠ oppfølging</div>
+          </div>
+
+          <div style="padding:10px 12px;border-right:1px solid #dde3f0;text-align:center;background:rgba(26,79,196,0.04);">
+            <div style="font-size:9px;color:#6b7a99;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:3px;">Plukket i dag</div>
+            <div style="font-family:'Outfit',sans-serif;font-weight:900;font-size:24px;color:#1a4fc4;line-height:1;">19</div>
+            <div style="font-size:9px;color:#6b7a99;margin-top:2px;">av 23 nye</div>
+          </div>
+
+          <div style="padding:10px 12px;border-right:1px solid #dde3f0;text-align:center;background:rgba(22,163,74,0.04);">
+            <div style="font-size:9px;color:#6b7a99;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:3px;">Levert i dag</div>
+            <div style="font-family:'Outfit',sans-serif;font-weight:900;font-size:24px;color:#16a34a;line-height:1;">15</div>
+            <div style="font-size:9px;color:#16a34a;margin-top:2px;">✓ bekreftet</div>
+          </div>
+
+          <div style="padding:10px 12px;text-align:center;">
+            <div style="font-size:9px;color:#6b7a99;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:3px;">Beløp i dag</div>
+            <div style="font-family:'Outfit',sans-serif;font-weight:900;font-size:16px;color:#050e2b;line-height:1.2;">187 450</div>
+            <div style="font-size:9px;color:#6b7a99;">DB: 59 980</div>
+            <div style="font-size:9px;color:#16a34a;margin-top:1px;">DB% 32,0</div>
+          </div>
+
+        </div>
+
+        <!-- Sammenligningstabell -->
+        <div style="padding:12px 14px 10px;background:#fff;">
+          <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:10px;color:#050e2b;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px;">Omsetning og dekningsbidrag — sammenligning med i fjor</div>
+          <table style="width:100%;border-collapse:collapse;font-size:11px;">
+            <thead>
+              <tr>
+                <th style="text-align:left;padding:5px 9px;background:#0a1f5c;color:#fff;font-family:'Outfit',sans-serif;font-weight:600;font-size:9.5px;letter-spacing:0.4px;">Periode</th>
+                <th style="text-align:right;padding:5px 9px;background:#0a1f5c;color:#fff;font-family:'Outfit',sans-serif;font-weight:600;font-size:9.5px;">Ordre i år</th>
+                <th style="text-align:right;padding:5px 9px;background:#0a1f5c;color:rgba(255,255,255,0.60);font-family:'Outfit',sans-serif;font-weight:600;font-size:9.5px;">Ordre i fjor</th>
+                <th style="text-align:right;padding:5px 9px;background:#0a1f5c;color:#fff;font-family:'Outfit',sans-serif;font-weight:600;font-size:9.5px;">Omsetning i år</th>
+                <th style="text-align:right;padding:5px 9px;background:#0a1f5c;color:rgba(255,255,255,0.60);font-family:'Outfit',sans-serif;font-weight:600;font-size:9.5px;">Omsetning i fjor</th>
+                <th style="text-align:right;padding:5px 9px;background:#0a1f5c;color:#ff9a45;font-family:'Outfit',sans-serif;font-weight:600;font-size:9.5px;">DB i år</th>
+                <th style="text-align:right;padding:5px 9px;background:#0a1f5c;color:#ff9a45;font-family:'Outfit',sans-serif;font-weight:600;font-size:9.5px;">DB%</th>
+                <th style="text-align:center;padding:5px 9px;background:#0a1f5c;color:#fff;font-family:'Outfit',sans-serif;font-weight:600;font-size:9.5px;">Vekst</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;font-weight:600;color:#4a5568;font-size:11px;">I dag</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:right;font-family:'Outfit',sans-serif;font-weight:700;color:#050e2b;">23</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:right;color:#94a3b8;">22</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:right;font-family:'Outfit',sans-serif;font-weight:700;color:#050e2b;">187 450</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:right;color:#94a3b8;">181 990</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:right;font-family:'Outfit',sans-serif;font-weight:700;color:#f47c20;">59 980</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:right;color:#f47c20;font-weight:600;">32,0 %</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:center;"><span style="background:rgba(22,163,74,0.12);color:#16a34a;font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:8px;font-family:'Outfit',sans-serif;">+3,0 %</span></td>
+              </tr>
+              <tr style="background:#f7f9fc;">
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;font-weight:600;color:#4a5568;font-size:11px;">Denne uke</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:right;font-family:'Outfit',sans-serif;font-weight:700;color:#050e2b;">82</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:right;color:#94a3b8;">80</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:right;font-family:'Outfit',sans-serif;font-weight:700;color:#050e2b;">667 200</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:right;color:#94a3b8;">647 800</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:right;font-family:'Outfit',sans-serif;font-weight:700;color:#f47c20;">213 500</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:right;color:#f47c20;font-weight:600;">32,0 %</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:center;"><span style="background:rgba(22,163,74,0.12);color:#16a34a;font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:8px;font-family:'Outfit',sans-serif;">+3,0 %</span></td>
+              </tr>
+              <tr>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;font-weight:600;color:#4a5568;font-size:11px;">Denne måned</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:right;font-family:'Outfit',sans-serif;font-weight:700;color:#050e2b;">412</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:right;color:#94a3b8;">400</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:right;font-family:'Outfit',sans-serif;font-weight:700;color:#050e2b;">3 342 100</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:right;color:#94a3b8;">3 244 800</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:right;font-family:'Outfit',sans-serif;font-weight:700;color:#f47c20;">1 069 500</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:right;color:#f47c20;font-weight:600;">32,0 %</td>
+                <td style="padding:5px 9px;border-bottom:1px solid #eef0f5;text-align:center;"><span style="background:rgba(22,163,74,0.12);color:#16a34a;font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:8px;font-family:'Outfit',sans-serif;">+3,0 %</span></td>
+              </tr>
+              <tr style="background:#f7f9fc;">
+                <td style="padding:5px 9px;font-weight:700;color:#050e2b;font-size:11px;">Hittil i år (YTD)</td>
+                <td style="padding:5px 9px;text-align:right;font-family:'Outfit',sans-serif;font-weight:700;color:#050e2b;">1 847</td>
+                <td style="padding:5px 9px;text-align:right;color:#94a3b8;">1 793</td>
+                <td style="padding:5px 9px;text-align:right;font-family:'Outfit',sans-serif;font-weight:700;color:#050e2b;">15 234 500</td>
+                <td style="padding:5px 9px;text-align:right;color:#94a3b8;">14 790 800</td>
+                <td style="padding:5px 9px;text-align:right;font-family:'Outfit',sans-serif;font-weight:700;color:#f47c20;">4 875 000</td>
+                <td style="padding:5px 9px;text-align:right;color:#f47c20;font-weight:600;">32,0 %</td>
+                <td style="padding:5px 9px;text-align:center;"><span style="background:rgba(22,163,74,0.12);color:#16a34a;font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:8px;font-family:'Outfit',sans-serif;">+3,0 %</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Statuslinje -->
+        <div style="background:#eef1f8;border-top:1px solid #d6ddf0;padding:5px 14px;display:flex;align-items:center;gap:14px;border-radius:0 0 8px 8px;overflow:hidden;">
+          <div style="display:flex;align-items:center;gap:5px;">
+            <div style="width:7px;height:7px;border-radius:50%;background:#16a34a;"></div>
+            <span style="font-size:9px;color:#6b7a99;">Oppdatert kl. 14:32</span>
+          </div>
+          <div style="flex:1;"></div>
+          <span style="font-size:9px;color:#94a3b8;">Kilde: PengVin ERP + Power BI Pro</span>
+          <span style="font-size:9px;color:#d0d7eb;">|</span>
+          <span style="font-size:9px;color:#94a3b8;">Tilgang styrt per kunde via RLS</span>
+        </div>
+
+      </div>
+      <p class="fig-caption">Figur 10 – Eksempel: Kundeordre-dashboard i Power BI med KPI-kort, periodisk sammenligning og dekningsbidrag</p>
+
+    </div><!-- /dashboard-seksjon -->
+
+    <!-- SEKSJON 11: PENGVIN AI -->
+    <div class="section">
+      <div class="section-label">Seksjon 11</div>
+      <h2>PengVin AI – Kunstig intelligens i ERP*</h2>
+      <p>
+        PengVin AI er et integrert lag av maskinlærings- og språkmodell-tjenester bygget direkte inn i PengVin ERP.
+        Funksjonene er tilpasset byggematerialhandel og BIG-nettverkets datakildegrunnlag — NOBB, leverandørprisfiler,
+        salgshistorikk og PIM — slik at AI-verdien er relevant fra dag én uten opplæringsprosjekter.
+      </p>
+
+      <!-- AI-funksjoner grid 2×4 -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;">
+
+        <!-- 1 -->
+        <div style="background:linear-gradient(135deg,rgba(26,79,196,0.06) 0%,rgba(26,79,196,0.02) 100%);border:1px solid rgba(26,79,196,0.18);border-radius:10px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:38px;height:38px;border-radius:10px;background:rgba(26,79,196,0.12);display:flex;align-items:center;justify-content:center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#1a4fc4" stroke-width="2" stroke-linejoin="round"/><path d="M2 17l10 5 10-5" stroke="#1a4fc4" stroke-width="2" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke="#1a4fc4" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;color:#050e2b;margin-bottom:4px;">Automatisk varegruppekobling</div>
+            <p style="font-size:11.5px;color:#4a5568;line-height:1.55;margin:0;">AI-modell matcher leverandørers produktbeskrivelser og artikkelnummer mot BIG-varegrupper og NOBB-kategori. Reduserer manuelt arbeid ved import av nye prisfiler med opptil 90 %.</p>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div style="background:linear-gradient(135deg,rgba(244,124,32,0.06) 0%,rgba(244,124,32,0.02) 100%);border:1px solid rgba(244,124,32,0.20);border-radius:10px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:38px;height:38px;border-radius:10px;background:rgba(244,124,32,0.12);display:flex;align-items:center;justify-content:center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="#f47c20" stroke-width="2" stroke-linecap="round"/><path d="M7 16l4-6 4 4 4-7" stroke="#f47c20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;color:#050e2b;margin-bottom:4px;">Prisoptimalisering og marginalarm</div>
+            <p style="font-size:11.5px;color:#4a5568;line-height:1.55;margin:0;">Analyserer historiske salgsdata og innkjøpspriser for å foreslå optimale utsalgspriser. Varsler automatisk når en ny prisfil vil presse dekningsbidrag under definert terskel.</p>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div style="background:linear-gradient(135deg,rgba(16,185,129,0.06) 0%,rgba(16,185,129,0.02) 100%);border:1px solid rgba(16,185,129,0.20);border-radius:10px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:38px;height:38px;border-radius:10px;background:rgba(16,185,129,0.12);display:flex;align-items:center;justify-content:center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="6" height="14" rx="1" stroke="#10b981" stroke-width="2"/><rect x="9" y="3" width="6" height="18" rx="1" stroke="#10b981" stroke-width="2" opacity="0.7"/><rect x="16" y="10" width="6" height="11" rx="1" stroke="#10b981" stroke-width="2" opacity="0.5"/></svg>
+          </div>
+          <div>
+            <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;color:#050e2b;margin-bottom:4px;">Etterspørselsprognoser og lageroptimalisering</div>
+            <p style="font-size:11.5px;color:#4a5568;line-height:1.55;margin:0;">Prediktiv modell basert på salgshistorikk, sesongmønstre og kampanjekalender. Foreslår optimale bestillingskvanta og tidspunkt for å unngå tomgang og overlagring.</p>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div style="background:linear-gradient(135deg,rgba(99,102,241,0.06) 0%,rgba(99,102,241,0.02) 100%);border:1px solid rgba(99,102,241,0.18);border-radius:10px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:38px;height:38px;border-radius:10px;background:rgba(99,102,241,0.12);display:flex;align-items:center;justify-content:center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="#6366f1" stroke-width="2"/><path d="M21 21l-4.35-4.35" stroke="#6366f1" stroke-width="2" stroke-linecap="round"/><path d="M11 8v3l2 2" stroke="#6366f1" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;color:#050e2b;margin-bottom:4px;">Semantisk søk i NOBB og SDS</div>
+            <p style="font-size:11.5px;color:#4a5568;line-height:1.55;margin:0;">Søk på naturlig norsk på tvers av NOBB-produktdata og sikkerhetsdatablader. Finner relevante produkter og dokumenter selv om søkeordet ikke matcher nøyaktig artikkelbeskrivelse.</p>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div style="background:linear-gradient(135deg,rgba(245,158,11,0.06) 0%,rgba(245,158,11,0.02) 100%);border:1px solid rgba(245,158,11,0.20);border-radius:10px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:38px;height:38px;border-radius:10px;background:rgba(245,158,11,0.12);display:flex;align-items:center;justify-content:center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="#f59e0b" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;color:#050e2b;margin-bottom:4px;">Ordreassistent og kryssalgsforslag</div>
+            <p style="font-size:11.5px;color:#4a5568;line-height:1.55;margin:0;">Foreslår komplementære produkter og substitutter direkte i ordreregistreringen, basert på hva andre kunder i BIG-nettverket typisk kjøper sammen. Øker gjennomsnittlig ordrestørrelse.</p>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div style="background:linear-gradient(135deg,rgba(220,38,38,0.05) 0%,rgba(220,38,38,0.02) 100%);border:1px solid rgba(220,38,38,0.16);border-radius:10px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:38px;height:38px;border-radius:10px;background:rgba(220,38,38,0.10);display:flex;align-items:center;justify-content:center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="#dc2626" stroke-width="2" stroke-linejoin="round"/><line x1="12" y1="9" x2="12" y2="13" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;color:#050e2b;margin-bottom:4px;">Avviksdeteksjon i regnskap og innkjøp</div>
+            <p style="font-size:11.5px;color:#4a5568;line-height:1.55;margin:0;">Kontinuerlig overvåking av transaksjonsdata oppdager statistiske avvik — uvanlig høye fakturaer, dupliserte posteringer eller kredittnoter utenfor norm — og varsler regnskapsansvarlig.</p>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div style="background:linear-gradient(135deg,rgba(14,165,233,0.06) 0%,rgba(14,165,233,0.02) 100%);border:1px solid rgba(14,165,233,0.18);border-radius:10px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:38px;height:38px;border-radius:10px;background:rgba(14,165,233,0.12);display:flex;align-items:center;justify-content:center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="#0ea5e9" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;color:#050e2b;margin-bottom:4px;">Naturlig-språk-spørring mot ERP-data</div>
+            <p style="font-size:11.5px;color:#4a5568;line-height:1.55;margin:0;">Still spørsmål på norsk direkte mot ERP-databasen: «Vis meg de 10 kundene med størst omsetningsvekst siste kvartal». AI oversetter til SQL, kjører spørringen og presenterer resultatet som tabell eller graf.</p>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div style="background:linear-gradient(135deg,rgba(168,85,247,0.06) 0%,rgba(168,85,247,0.02) 100%);border:1px solid rgba(168,85,247,0.18);border-radius:10px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;">
+          <div style="flex-shrink:0;width:38px;height:38px;border-radius:10px;background:rgba(168,85,247,0.12);display:flex;align-items:center;justify-content:center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#a855f7" stroke-width="2" stroke-linejoin="round"/><path d="M14 2v6h6" stroke="#a855f7" stroke-width="2"/><path d="M9 13h1.5a1.5 1.5 0 110 3H9v-3zM9 16v2" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round"/><path d="M14 13l1 5M14 13l1.5 3 1.5-3 1 2" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;color:#050e2b;margin-bottom:4px;">AI-tolking av innkommende dokumenter</div>
+            <p style="font-size:11.5px;color:#4a5568;line-height:1.55;margin:0;">Leser og strukturerer innkommende leverandørfakturaer, ordrebekreftelser og fraktdokumenter automatisk — også de som ikke er i PEPPOL/EHF-format. Foreslår kontering og kobler mot eksisterende bestillinger.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Callout + tabell: starter alltid på ny side med korrekt avstand til print-header -->
+      <div class="print-page-break">
+
+      <div class="callout" style="background:rgba(5,14,43,0.04);border-left-color:#050e2b;">
+        <div class="callout-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#050e2b" stroke-width="2"/><path d="M9 12l2 2 4-4" stroke="#050e2b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p>
+          <strong>Personvern og databehandling:</strong> PengVin AI bruker kun data innenfor den enkelte kundes ERP-database og BIG-fellesdata som kunden allerede har tilgang til. Ingen treningsdata deles mellom kunder. Alle AI-tjenester kjøres innenfor EØS og er underlagt PengVins databehandleravtale.
+        </p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#6366f1"/><path d="M7 11l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p>
+          <strong>Under utvikling.</strong> 
+          Dette er noe vi jobber aktivt med og har allerede fått på plass flere moduler. Det betyr at det som vises over er noe som finnes, noe under utvikling og noe visjoner.
+        </p>
+      </div>
+
+      <!-- Sammenligningstabel: manuelt vs. AI -->
+      <table class="results-table" style="margin-top:18px;">
+        <thead>
+          <tr>
+            <th>Arbeidsoppgave</th>
+            <th>Uten AI (i dag)</th>
+            <th>Med PengVin AI</th>
+            <th>Estimert tidsbesparelse</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Import av leverandørprisfil med varegruppekobling</td>
+            <td>2–4 timer manuelt</td>
+            <td>Automatisk ved import</td>
+            <td><span class="badge-green">~90 %</span></td>
+          </tr>
+          <tr>
+            <td>Kontroll av ny prisfil mot margin-terskel</td>
+            <td>Spot-sjekk i Excel</td>
+            <td>Automatisk varsel ved import</td>
+            <td><span class="badge-green">~100 %</span></td>
+          </tr>
+          <tr>
+            <td>Bestillingsplanlegging (lageroptimalisering)</td>
+            <td>Erfaring + manuell gjennomgang</td>
+            <td>Ukentlig AI-rapport med forslag</td>
+            <td><span class="badge-green">~60 %</span></td>
+          </tr>
+          <tr>
+            <td>Fremhenting av KPI-tall for ledermøte</td>
+            <td>30–60 min Excel/Power BI</td>
+            <td>Naturlig-språk-spørring, &lt;30 sek</td>
+            <td><span class="badge-green">~95 %</span></td>
+          </tr>
+          <tr>
+            <td>Manuell gjennomgang av innkommende fakturaer</td>
+            <td>Per faktura: 5–10 min</td>
+            <td>AI foreslår kontering og kobling</td>
+            <td><span class="badge-yellow">~50 %</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="fig-caption">Tabell 11 – Estimert tidsbesparelse per oppgave med PengVin AI aktivert. Faktisk gevinst avhenger av datavolum og konfigurasjon.</p>
+
+      </div><!-- /print-page-break -->
+
+    </div><!-- /seksjon 11 -->
+
+    <!-- SEKSJON 12: BIG WEBSHOP LOGIKKBYGGER -->
+    <div class="section print-page-break">
+      <div class="section-label">Seksjon 12</div>
+      <h2>BIG WebShop – Logikkbygger</h2>
+      <p>
+        <strong>BIG WebShop Logikkbygger</strong> er et verktøy som startes fra PengVin menyen og lar butikken
+        kategosiere lokalt sortiment på en mye mer enkel og effektiv måte. Det finnes mange kontroller for å kvalitetssikre
+        innholdet i WebShoppen. Det vedlikeholdes direkte fra ERP-grensesnittet,
+        uten behov for programmeringsekspertise eller ekstern konsulentbistand. Endringer trer i kraft ved neste import av data
+        til WebShoppen.
+      </p>      
+
+      <table class="detail-table">
+        <thead>
+          <tr>
+            <th>Funksjon</th>
+            <th>Beskrivelse</th>
+            <th>Utfall</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Vareutvalgsregler</td>
+            <td>Aktiver eller deaktiver sortiment, et eller mange produkter samtidig.</td>
+            <td>Rask tilpassing</td>
+          </tr>
+          <tr>
+            <td>Logikknummer</td>
+            <td>Plasser flere produkter i samme logikknummer, bygger automatisk produktblokk.</td>
+            <td>Et produkt/bilde - viser flere artikler</td>
+          </tr>
+          <tr>
+            <td>Kontroll</td>
+            <td>Sjekk om det er publisert utgåtte produkter eller om de har for lav DG.</td>
+            <td>Kvalitetssikre innhold i WebShop</td>
+          </tr>          
+        </tbody>
+      </table>
+      <p class="fig-caption">Tabell 12 – Nøkkelfunksjoner i BIG WebShop Logikkbygger og forventet utfall per funksjon.</p>
+
+      <div class="callout">
+        <div class="callout-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#f47c20"/><path d="M11 7v4M11 14v1" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <p>
+          <strong>Ingen teknisk kunnskap nødvendig:</strong> Logikkbyggeren er utformet for butikkpersonell,
+          innkjøpere og daglig leder. Alle regler settes opp via punktlister og skjemaer — ikke kode.
+          Endringer kan forhåndsvises i testmiljø før de settes i produksjon.
+        </p>
+      </div>
+    </div><!-- /seksjon 12 -->
+
+    <!-- SEKSJON 13: INTEGRASJON REGNSKAP -->
+    <div class="section">
+      <div class="section-label">Seksjon 13</div>
+      <h2>Integrasjon Regnskap</h2>
+      <p>
+        PengVin One leverer ferdigkonfigurerte integrasjoner mellom PengVin ERP og mange av de mest brukte
+        regnskapssystemene i norsk byggevarehandel. Kundefaktura journaler, kontantsalg og leverandørfakturaer eksporteres 
+        autoamtisk til valgt rengskapssystem.        
+      </p>
+      <p>
+        Integrasjonen bruker standardiserte filformater og API-er og er sertifisert mot BIG-nettverkets
+        krav til regnskapsdatakvalitet. Konto- og mva-kodetilordninger settes opp én gang per butikk
+        og vedlikeholdes av PengVin ved regelverksendringer — butikken trenger ikke gjøre noe.
+      </p>
+
+      <div class="field-list">
+        <div class="field-item"><span class="dot dot-green"></span>Visma Business / Visma.net</div>
+        <div class="field-item"><span class="dot dot-green"></span>Tripletex</div>
+        <div class="field-item"><span class="dot dot-green"></span>PowerOffice Go</div>
+        <div class="field-item"><span class="dot dot-green"></span>Unimicro</div>        
+        <div class="field-item"><span class="dot dot-gray"></span>Andre via fil/CSV-eksport</div>
+      </div>
+      <p class="fig-caption">Figur 13 – Støttede regnskapssystemer. Grønn = ferdigkonfigurert. Grå = tilpasset integrasjon.</p>
+
+      <table class="detail-table">
+        <thead>
+          <tr>
+            <th>Dokumenttype</th>
+            <th>Overføres automatisk?</th>
+            <th>Frekvens</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Kundefaktura/kreditnota journal</td>
+            <td>Ja – ved godkjenning i ERP</td>
+            <td>Sanntid / periodisk</td>
+          </tr>          
+          <tr>
+            <td>Leverandørfaktura</td>
+            <td>Ja – etter godkjent betaling og attestering</td>
+            <td>Daglig eller ved godkjenning</td>
+          </tr>
+          <tr>
+            <td>Kontantsalg</td>
+            <td>Ja – ved godkjenning i PengVin</td>
+            <td>Daglig eller ved godkjenning</td>
+          </tr>
+          <tr>
+            <td>Åpen saldo</td>
+            <td>Ja – kan hentes via API eller fil</td>
+            <td>Daglig</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="fig-caption">Tabell 13 – Oversikt over dokumenttyper og overføringsfrekvens for regnskapsintegrasjon.</p>
+
+      <div class="callout">
+        <div class="callout-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#10b981"/><path d="M7 11l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p>
+          <strong>Revisjonsspor inkludert:</strong> Alle overføringer logges med tidspunkt, bruker og
+          bilagsnummer. 
+        </p>
+      </div>
+    </div><!-- /seksjon 13 -->
+
+    <!-- SEKSJON 14: ELEKTRONISKE DOKUMENTER -->
+    <div class="section">
+      <div class="section-label">Seksjon 14</div>
+      <h2>Elektroniske dokumenter – Faktura, Ordrebekreftelse, Leveransebekreftelse</h2>
+      <p>
+        PengVin One støtter full elektronisk dokumentutveksling i henhold til norske og europeiske standarder.
+        Fakturaer, ordrebekreftelser og leveransebekreftelser sendes og mottas direkte i ERP via
+        <strong>Peppol-nettverket</strong> og <strong>EHF-formatet</strong> (Elektronisk Handelsformat) —
+        uten papir, e-postvedlegg eller manuell inntasting i mottakersystemet.
+      </p>
+      <p>
+        Løsningen dekker kravene i Lov om elektronisk fakturering til offentlige virksomheter og anbefalte 
+        retningslinjer for B2B-dokumentutveksling. Alle dokumenter arkiveres automatisk
+        i uforanderlig format i henhold til bokføringsloven (10 år) og er søkbare direkte fra ERP.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-title">Ordre mottas</div>
+          <div class="step-desc">Kundeordre registreres i PengVin ERP — manuelt, via EDI eller fra nettbutikk.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-title">Ordrebekreftelse</div>
+          <div class="step-desc">EHF-ordrebekreftelse genereres og sendes automatisk til kjøper via Peppol.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-title">Plukk &amp; pakk</div>
+          <div class="step-desc">Plukkprosess i lager. Avvik mot bestilling registreres direkte i ERP.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-title">Leveransebekreftelse</div>
+          <div class="step-desc">Forsendelsesdokument og EHF Despatch Advice sendes automatisk ved utlevering.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-title">Faktura</div>
+          <div class="step-desc">EHF-faktura genereres og sendes. Arkiveres og synkroniseres med regnskap.</div>
+        </div>
+      </div>
+      <p class="fig-caption">Figur 14 – Dokumentflyt fra kundeordre til faktura via Peppol/EHF.</p>
+
+      <table class="detail-table">
+        <thead>
+          <tr>
+            <th>Dokumenttype</th>
+            <th>Standard</th>
+            <th>Sending</th>
+            <th>Mottak</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Faktura (utgående)</td>
+            <td>EHF 3.0 / Peppol BIS</td>
+            <td><span class="badge-green">Støttet</span></td>
+            <td>–</td>
+          </tr>
+          <tr>
+            <td>Kreditnota</td>
+            <td>EHF 3.0 / Peppol BIS</td>
+            <td><span class="badge-green">Støttet</span></td>
+            <td>–</td>
+          </tr>
+          <tr>
+            <td>Ordrebekreftelse</td>
+            <td>EHF Order Response</td>
+            <td><span class="badge-green">Støttet</span></td>
+            <td>–</td>
+          </tr>
+          <tr>
+            <td>Leveransebekreftelse (Despatch Advice)</td>
+            <td>EHF Despatch Advice 1.0</td>
+            <td><span class="badge-green">Støttet</span></td>
+            <td>–</td>
+          </tr>
+          <tr>
+            <td>Leverandørfaktura (innkommende)</td>
+            <td>EHF 3.0 / Peppol BIS</td>
+            <td>–</td>
+            <td><span class="badge-green">Støttet</span></td>
+          </tr>
+          <tr>
+            <td>Ordre (innkommende)</td>
+            <td>EHF 3.0 / Peppol BIS</td>
+            <td>–</td>
+            <td><span class="badge-green">Støttet</span></td>
+          </tr>
+          <tr>
+            <td>Ordrebekreftelse (innkommende)</td>
+            <td>EHF 3.0 / Peppol BIS</td>
+            <td>–</td>
+            <td><span class="badge-green">Støttet</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="fig-caption">Tabell 14 – Støttede elektroniske dokumenttyper og standarder i PengVin One.</p>
+
+      <div class="callout">
+        <div class="callout-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="10" fill="#0891b2"/><path d="M7 11l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p>
+          <strong>Arkivlovens krav ivaretatt:</strong> Alle elektroniske dokumenter arkiveres automatisk
+          i henhold til bokføringsloven (10 år). Ingen risiko for manglende dokumentasjon ved bokettersyn.
+          Arkivet er søkbart direkte fra ERP og kan eksporteres på forespørsel fra revisor.
+        </p>
+      </div>
+    </div><!-- /seksjon 14 -->
+
+  </div><!-- /content -->
+
+</div><!-- /page-wrapper -->
+
+<div class="print-footer">
+  <div class="divider-bar"></div>
+  <div class="footer">
+    <svg style="height:22px;width:auto;display:block;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 259 88.83"><g><polygon style="fill:#ffffff;" points="217.67 15.93 211.38 19.23 208.9 14.5 189.59 70.68 179.68 70.68 163.16 22.5 171.42 22.5 184.63 61.73 201.47 12.14 196.68 14.65 193.38 8.36 209.31 0 217.67 15.93"/><path style="fill:#ffffff;" d="M36.73,38.24c0,9.46-6.42,16.08-16.96,16.08H7.79v16.36H0V22.35H19.77c10.54,0,16.96,6.36,16.96,15.89Zm-7.95,.07c0-4.9-2.96-8.49-9.3-8.49H7.79v17.07h11.71c6.34-.02,9.3-3.7,9.3-8.58h-.02Z"/><path style="fill:#ffffff;" d="M77.23,53.84h-30.82c.62,6.98,5.52,10.83,11.86,10.83,4.54,0,8.34-1.92,10.12-5.69h8.06c-2.96,8.49-10.22,12.52-18.25,12.52-11.52,0-19.72-8.28-19.72-19.74s8.09-19.87,19.57-19.87c12.2,0,19.92,9.46,19.18,21.95Zm-30.4-6.35h22.04c-.45-2.53-1.79-4.81-3.78-6.43-1.99-1.62-4.48-2.48-7.05-2.42-2.61-.07-5.16,.78-7.2,2.4-2.05,1.62-3.47,3.9-4.02,6.45h0Z"/><path style="fill:#ffffff;" d="M116.61,46.73v23.9h-7.78v-22.3c0-5.87-2.56-8.98-8.27-8.98-6.69,0-10.22,4.35-10.22,11.66v19.67h-7.84V32.71h7.79v6.29c1.26-2.24,3.1-4.09,5.34-5.34,2.24-1.25,4.77-1.87,7.34-1.77,8.54,0,13.64,5.61,13.64,14.84Z"/><path style="fill:#ffffff;" d="M160.37,32.71v37.55c0,11.32-7.1,18.57-18.33,18.57-9.03,0-17.23-4.7-18.88-14.16h8.05c1.32,4.9,5.52,7.18,10.62,7.18,6.96,0,10.74-3.94,10.74-11.38v-6.49c-1.43,2.21-3.39,4.01-5.7,5.26-2.31,1.24-4.9,1.88-7.53,1.85-10.12,0-17.5-8.22-17.5-19.61s7.52-19.61,17.5-19.61c2.65-.03,5.26,.63,7.58,1.91,2.32,1.28,4.27,3.14,5.65,5.4v-6.5h7.79Zm-7.72,18.79c0-7.04-5.03-12.15-11.64-12.15s-11.36,5.11-11.36,12.15,4.82,12.18,11.36,12.18,11.64-5.06,11.64-12.18Z"/><path style="fill:#ffffff;" d="M209.22,32.71h7.79v37.97h-7.79V32.71Z"/><path style="fill:#ffffff;" d="M259,46.73v23.9h-7.78v-22.3c0-5.87-2.56-8.98-8.27-8.98-6.69,0-10.22,4.35-10.22,11.66v19.67h-7.79V32.71h7.79v6.29c1.26-2.24,3.1-4.09,5.34-5.34,2.24-1.25,4.77-1.87,7.33-1.77,8.5,0,13.6,5.61,13.6,14.84Z"/></g></svg>
+    <div class="footer-contact">
+      <a href="mailto:post@pengvin.no">post@pengvin.no</a> &nbsp;|&nbsp;
+      +47 902 92 050 &nbsp;|&nbsp;
+      <a href="https://www.pengvin.no">www.pengvin.no</a>
+    </div>
+    <div class="footer-revised">
+      Produktdatablad – PengVin One &nbsp;|&nbsp; Revidert 24. april 2026 &nbsp;|&nbsp; © 2026 PengVin AS
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
