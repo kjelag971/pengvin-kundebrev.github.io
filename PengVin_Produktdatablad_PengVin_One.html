@@ -464,8 +464,8 @@
 
   /* Side 1: ingen topp-margin (cover fyller siden helt opp) */
   @page :first { size: A4; margin: 0; }
-  /* Side 2+: 22 mm luft øverst (16mm header + 6mm puste-rom) */
-  @page { size: A4; margin: 22mm 0 0 0; }
+  /* Side 2+: 22mm topp (header 16mm + 6mm luft) + 14mm bunn (footer ~50px) */
+  @page { size: A4; margin: 22mm 0 14mm 0; }
 
   @media print {
     /* Fast header på alle sider */
@@ -493,11 +493,11 @@
       background: linear-gradient(90deg, var(--orange) 0%, var(--orange-light) 60%, var(--blue-light) 100%);
     }
 
-    /* Side 1: cover fyller siden fra toppen.
-       Skjul logo-area (print-headeren har logoene) og
-       skyv tittelen ned slik at den starter under print-headeren. */
-    .cover .logo-area { display: none; }
-    .cover { padding-top: 16mm; }
+    /* Side 1: cover dekker print-headeren via høy z-index, viser egen logo-area */
+    .cover {
+      position: relative;
+      z-index: 2000;
+    }
   }
 
   @media print {
@@ -517,14 +517,10 @@
       overflow: visible;
     }
 
-    /* Romslig bunn slik at innhold ikke skjules bak fast footer */
-    .content { padding-bottom: 90px; }
+    /* @page bunn-margin (14mm) sørger for at innhold ikke skjules bak footer */
+    .content { padding-bottom: 0; }
 
-    /* Seksjoner som havner øverst på en ny side starter under print-headeren */
-    .section + .section,
-    .toc + .section {
-      padding-top: 22mm;
-    }
+    /* @page-margen (22mm) håndterer header-avstand; ingen ekstra padding nødvendig */
 
     .cover, .divider-bar {
       -webkit-print-color-adjust: exact;
@@ -557,11 +553,7 @@
 
     /* ── Hindre at seksjoner og blokker deles over sideskift ── */
 
-    /* Hele seksjon holdes på én side der det er plass */
-    .section {
-      break-inside: avoid;
-      page-break-inside: avoid;
-    }
+    /* Seksjoner kan dele seg over sideskift (forhindrer blank-side-problemet) */
 
     /* Tving ny side BEFORE en seksjon hvis den ellers ville bli delt */
     .section h2 {
@@ -574,7 +566,6 @@
     .steps,
     .step,
     .callout,
-    .service-grid,
     .service-card,
     .results-table,
     .detail-table,
@@ -1301,53 +1292,7 @@ Samtidig jobbes det målrettet med nye løsninger som skal styrke plattformen yt
       <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text-mid);margin:22px 0 10px;">
         Forhåndsvisning – Nyhetsfeed i dashboard
       </div>
-      <div class="dashboard-mockup" style="background:#0d1526;border-radius:10px;padding:18px 20px;margin-bottom:6px;">
-        <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:14px;">NYHETER</div>
-
-        <!-- NY RAPPORT -->
-        <div style="background:#172035;border-radius:8px;padding:14px 16px;margin-bottom:9px;">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
-            <span style="background:#1a4fc4;color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;padding:3px 9px;border-radius:4px;">NY RAPPORT</span>
-            <span style="font-size:11px;color:rgba(255,255,255,0.40);">10.05</span>
-          </div>
-          <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;color:#fff;margin-bottom:5px;">Nytt dashboard med KPI'er og nyhetsfeed</div>
-          <div style="font-size:11.5px;color:rgba(255,255,255,0.58);line-height:1.5;margin-bottom:10px;">Samler de viktigste nøkkeltallene og holder deg oppdatert med systemoppdateringer direkte i PengVin.</div>
-          <span style="font-family:'Outfit',sans-serif;font-size:11px;color:rgba(255,255,255,0.42);background:#1e2d48;border-radius:5px;padding:5px 12px;">Les mer →</span>
-        </div>
-
-        <!-- UPDATE -->
-        <div style="background:#172035;border-radius:8px;padding:14px 16px;margin-bottom:9px;">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
-            <span style="background:#1a4fc4;color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;padding:3px 9px;border-radius:4px;">UPDATE</span>
-            <span style="font-size:11px;color:rgba(255,255,255,0.40);">08.05</span>
-          </div>
-          <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;color:#fff;margin-bottom:5px;">Ny prisfil – Robert Bosch</div>
-          <div style="font-size:11.5px;color:rgba(255,255,255,0.58);line-height:1.5;margin-bottom:10px;">Komplett prisfil som er kontrollert og bereiket med BIG VGR og rabattgruppe.</div>
-          <span style="font-family:'Outfit',sans-serif;font-size:11px;color:rgba(255,255,255,0.42);background:#1e2d48;border-radius:5px;padding:5px 12px;">Les mer →</span>
-        </div>
-
-        <!-- ALERT -->
-        <div style="background:#172035;border-radius:8px;padding:14px 16px;margin-bottom:9px;">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
-            <span style="background:#dc2626;color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;padding:3px 9px;border-radius:4px;">ALERT</span>
-            <span style="font-size:11px;color:rgba(255,255,255,0.40);">08.05</span>
-          </div>
-          <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;color:#fff;margin-bottom:5px;">Vedlikeholdsvindu 15. mai kl. 22–02</div>
-          <div style="font-size:11.5px;color:rgba(255,255,255,0.58);line-height:1.5;margin-bottom:10px;">Systemet vil være utilgjengelig for planlagt vedlikehold natt til 15. mai. Ingen data går tapt.</div>
-          <span style="font-family:'Outfit',sans-serif;font-size:11px;color:rgba(255,255,255,0.42);background:#1e2d48;border-radius:5px;padding:5px 12px;">Les mer →</span>
-        </div>
-
-        <!-- FEATURE -->
-        <div style="background:#172035;border-radius:8px;padding:14px 16px;">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
-            <span style="background:#7c3aed;color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;padding:3px 9px;border-radius:4px;">FEATURE</span>
-            <span style="font-size:11px;color:rgba(255,255,255,0.40);">05.05</span>
-          </div>
-          <div style="font-family:'Outfit',sans-serif;font-weight:700;font-size:13px;color:#fff;margin-bottom:5px;">Ny funksjon: Kategoridiagram</div>
-          <div style="font-size:11.5px;color:rgba(255,255,255,0.58);line-height:1.5;margin-bottom:10px;">Se omsetning per BIG-varegruppe som sektordiagram direkte i dashboardet. Klikk for å drille ned per periode.</div>
-          <span style="font-family:'Outfit',sans-serif;font-size:11px;color:rgba(255,255,255,0.42);background:#1e2d48;border-radius:5px;padding:5px 12px;">Les mer →</span>
-        </div>
-      </div>
+      <img src="Bilder/PengVin_Dashbord_2026_3.jpg" alt="Nyhetsfeed i PengVin-dashboardet" style="width:100%;border-radius:10px;display:block;margin-bottom:6px;">
       <p class="fig-caption">Figur 7b – Nyhetsfeed i PengVin-dashboardet: oppdateringer, varsler og nye funksjoner kategorisert og datostemplet.</p>
     </div>
 
@@ -2120,7 +2065,6 @@ Resultatet er bedre datakvalitet, mer effektiv drift og en løsning som skaper r
 </div><!-- /page-wrapper -->
 
 <div class="print-footer">
-  <div class="divider-bar"></div>
   <div class="footer">
     <svg style="height:22px;width:auto;display:block;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 259 88.83"><g><polygon style="fill:#ffffff;" points="217.67 15.93 211.38 19.23 208.9 14.5 189.59 70.68 179.68 70.68 163.16 22.5 171.42 22.5 184.63 61.73 201.47 12.14 196.68 14.65 193.38 8.36 209.31 0 217.67 15.93"/><path style="fill:#ffffff;" d="M36.73,38.24c0,9.46-6.42,16.08-16.96,16.08H7.79v16.36H0V22.35H19.77c10.54,0,16.96,6.36,16.96,15.89Zm-7.95,.07c0-4.9-2.96-8.49-9.3-8.49H7.79v17.07h11.71c6.34-.02,9.3-3.7,9.3-8.58h-.02Z"/><path style="fill:#ffffff;" d="M77.23,53.84h-30.82c.62,6.98,5.52,10.83,11.86,10.83,4.54,0,8.34-1.92,10.12-5.69h8.06c-2.96,8.49-10.22,12.52-18.25,12.52-11.52,0-19.72-8.28-19.72-19.74s8.09-19.87,19.57-19.87c12.2,0,19.92,9.46,19.18,21.95Zm-30.4-6.35h22.04c-.45-2.53-1.79-4.81-3.78-6.43-1.99-1.62-4.48-2.48-7.05-2.42-2.61-.07-5.16,.78-7.2,2.4-2.05,1.62-3.47,3.9-4.02,6.45h0Z"/><path style="fill:#ffffff;" d="M116.61,46.73v23.9h-7.78v-22.3c0-5.87-2.56-8.98-8.27-8.98-6.69,0-10.22,4.35-10.22,11.66v19.67h-7.84V32.71h7.79v6.29c1.26-2.24,3.1-4.09,5.34-5.34,2.24-1.25,4.77-1.87,7.34-1.77,8.54,0,13.64,5.61,13.64,14.84Z"/><path style="fill:#ffffff;" d="M160.37,32.71v37.55c0,11.32-7.1,18.57-18.33,18.57-9.03,0-17.23-4.7-18.88-14.16h8.05c1.32,4.9,5.52,7.18,10.62,7.18,6.96,0,10.74-3.94,10.74-11.38v-6.49c-1.43,2.21-3.39,4.01-5.7,5.26-2.31,1.24-4.9,1.88-7.53,1.85-10.12,0-17.5-8.22-17.5-19.61s7.52-19.61,17.5-19.61c2.65-.03,5.26,.63,7.58,1.91,2.32,1.28,4.27,3.14,5.65,5.4v-6.5h7.79Zm-7.72,18.79c0-7.04-5.03-12.15-11.64-12.15s-11.36,5.11-11.36,12.15,4.82,12.18,11.36,12.18,11.64-5.06,11.64-12.18Z"/><path style="fill:#ffffff;" d="M209.22,32.71h7.79v37.97h-7.79V32.71Z"/><path style="fill:#ffffff;" d="M259,46.73v23.9h-7.78v-22.3c0-5.87-2.56-8.98-8.27-8.98-6.69,0-10.22,4.35-10.22,11.66v19.67h-7.79V32.71h7.79v6.29c1.26-2.24,3.1-4.09,5.34-5.34,2.24-1.25,4.77-1.87,7.33-1.77,8.5,0,13.6,5.61,13.6,14.84Z"/></g></svg>
     <div class="footer-contact">
@@ -2128,11 +2072,56 @@ Resultatet er bedre datakvalitet, mer effektiv drift og en løsning som skaper r
       +47 902 92 050 &nbsp;|&nbsp;
       <a href="https://www.pengvin.no">www.pengvin.no</a>
     </div>
-    <div class="footer-revised">
-      Produktdatablad – PengVin One &nbsp;|&nbsp; Revidert 24. april 2026 &nbsp;|&nbsp; © 2026 PengVin AS
-    </div>
   </div>
 </div>
+
+
+<script>
+/* 25%-regel: ny seksjon starter på ny side hvis < 25% av siden gjenstår */
+(function () {
+  var A4_H    = 297;   /* A4-høyde i mm */
+  var TOP_MM  = 22;    /* @page topp-marg (header) */
+  var BOT_MM  = 14;    /* @page bunn-marg (footer) */
+  var USABLE  = A4_H - TOP_MM - BOT_MM;  /* 261 mm netto innholdsareal */
+
+  function preparePrint() {
+    var wrapper = document.querySelector('.page-wrapper');
+    if (!wrapper) return;
+
+    /* Nullstill sideskift fra forrige kjøring */
+    wrapper.querySelectorAll('.section[data-pb]').forEach(function (s) {
+      s.style.removeProperty('break-before');
+      s.style.removeProperty('page-break-before');
+      s.removeAttribute('data-pb');
+    });
+
+    var wr      = wrapper.getBoundingClientRect();
+    var pxPerMm = wr.width / 210;           /* skjerm-piksler per mm */
+    var pageH   = A4_H   * pxPerMm;         /* én sides høyde i px */
+    var topH    = TOP_MM * pxPerMm;          /* header-areal i px */
+    var usableH = USABLE * pxPerMm;          /* netto innholdsareal i px */
+    var wTop    = wr.top + window.scrollY;   /* wrapperens absoluttposisjon */
+
+    wrapper.querySelectorAll('.section').forEach(function (sec) {
+      var sTop  = sec.getBoundingClientRect().top + window.scrollY - wTop;
+      var pg    = Math.floor(sTop / pageH);
+      if (pg < 1) return;                    /* forside – ikke flytt */
+
+      /* Seksjonens posisjon innenfor innholdsarealet på denne siden */
+      var posI  = sTop - pg * pageH - topH;
+      var frac  = (usableH - posI) / usableH;  /* andel gjenværende plass */
+
+      if (frac > 0 && frac < 0.25) {
+        sec.style.setProperty('break-before', 'page');
+        sec.style.setProperty('page-break-before', 'always');
+        sec.setAttribute('data-pb', '1');
+      }
+    });
+  }
+
+  window.addEventListener('beforeprint', preparePrint);
+})();
+</script>
 
 </body>
 </html>
