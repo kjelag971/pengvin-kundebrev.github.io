@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PengVin Drift – Status</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #050e2b;
+      --blue-mid: #0a1f5c;
+      --blue-light: #1a4fc4;
+      --orange: #f47c20;
+      --orange-light: #ff9a45;
+      --gray-light: #f4f6fb;
+      --gray-mid: #e2e8f4;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #dde4f0;
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-weight: 400;
+      color: #1a2340;
+    }
+    .email-wrapper {
+      width: 100%;
+      background: #dde4f0;
+      padding: 32px 16px 48px;
+    }
+    .email-container {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(5,14,43,0.18);
+    }
+    .header {
+      position: relative;
+      background: #050e2b;
+      background: linear-gradient(135deg, #050e2b 0%, #0a1f5c 60%, #1a4fc4 100%);
+      padding: 26px 48px 28px;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: rgba(244,124,32,0.13);
+      pointer-events: none;
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: rgba(26,79,196,0.18);
+      pointer-events: none;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 2;
+    }
+    .header-badge {
+      background: linear-gradient(90deg, #f47c20, #ff9a45);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+    .header-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      font-size: 34px;
+      color: #ffffff;
+      line-height: 1.15;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 6px;
+    }
+    .header-subtitle {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
+      position: relative;
+      z-index: 2;
+    }
+    .divider-bar {
+      height: 5px;
+      background: linear-gradient(90deg, #f47c20, #1a4fc4);
+    }
+    .intro-section {
+      padding: 36px 48px 28px;
+      background: #ffffff;
+    }
+    .intro-section p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #1a2340;
+      margin-bottom: 12px;
+    }
+    .intro-section p:first-child {
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .card-wrap {
+      border: 2px solid #b8c4d8;
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 0 32px 28px;
+    }
+    .card-inner {
+      display: flex;
+      align-items: flex-start;
+      background: #fff;
+    }
+    .card-illustration {
+      width: 130px;
+      min-height: 200px;
+      background: linear-gradient(160deg, #f4f6fb 0%, #e2e8f4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+    .card-illustration img {
+      width: 90px;
+      height: 100px;
+      object-fit: contain;
+    }
+    .card-content {
+      flex: 1;
+      padding: 28px 28px 24px 24px;
+    }
+    .card-badge {
+      display: inline-block;
+      background: #f47c20;
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .card-heading {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      font-size: 22px;
+      color: #050e2b;
+      margin-bottom: 4px;
+    }
+    .card-subheading {
+      font-size: 13px;
+      color: #6b7a9e;
+      margin-bottom: 16px;
+    }
+    .card-content ul {
+      list-style: none;
+    }
+    .card-content li {
+      font-size: 13px;
+      color: #1a2340;
+      line-height: 1.6;
+      padding-left: 0;
+      margin-bottom: 8px;
+    }
+    .value-strip {
+      margin: 8px 32px 28px;
+      background-color: #050e2b;
+      background: linear-gradient(135deg, #050e2b 0%, #0a1f5c 100%);
+      border-radius: 14px;
+      padding: 28px 32px;
+      text-align: center;
+    }
+    .value-strip h3 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 20px;
+    }
+    .value-points {
+      display: flex;
+      gap: 16px;
+      justify-content: space-between;
+    }
+    .value-item {
+      flex: 1;
+      color: #ffffff;
+    }
+    .value-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    .value-label {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+    }
+    .footer {
+      background-color: #050e2b;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-logo {
+      height: 22px;
+      width: auto;
+    }
+    .footer-contact {
+      font-size: 11px;
+      color: rgba(255,255,255,0.65);
+      text-align: right;
+    }
+    .footer-contact a {
+      color: #ff9a45;
+      text-decoration: none;
+    }
+    .footer-revised {
+      background-color: #050e2b;
+      padding: 12px 40px;
+      text-align: center;
+      font-size: 10px;
+      color: rgba(255,255,255,0.35);
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    @media (max-width: 480px) {
+      .card-inner { flex-direction: column; }
+      .card-illustration { width: 100%; min-height: 120px; }
+      .value-points { flex-direction: column; gap: 12px; }
+      .footer { flex-direction: column; gap: 12px; text-align: center; }
+      .footer-contact { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div style="text-align:center;padding:10px 0 4px;font-family:'DM Sans',Arial,sans-serif;font-size:12px;color:#6b7a9e;">
+    Vises ikke riktig? <a href="https://kjelag971.github.io/pengvin-kundebrev.github.io/PV_KUNDEBREV_DRIFT_STATUS.html" style="color:#1a4fc4;text-decoration:underline;">Vis i nettleser</a>
+  </div>
+
+  <div class="email-wrapper">
+    <div class="email-container">
+      <!-- HEADER -->
+      <div class="header" style="background:#050e2b;background:linear-gradient(135deg,#050e2b 0%,#0a1f5c 60%,#1a4fc4 100%);padding:26px 48px 28px;">
+        <div class="logo-area">
+          <img src="data:image/png;base64,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" style="height:36px;width:auto;" alt="PengVin logo">
+          <span class="header-badge">DRIFTSINFORMASJON</span>
+        </div>
+        <div class="header-title">PengVin Drift – Migrasjon fullført</div>
+        <div class="header-subtitle">En oppdatering på status for vår platformflytting og kommende arbeid</div>
+      </div>
+      <div class="divider-bar"></div>
+
+      <!-- INTRO -->
+      <div class="intro-section">
+        <p><strong>Kjære kunde,</strong></p>
+        <p>Vi er stolte over å dele gode nyheter om vår driftsmigrasjon. Arbeidet med å flytte PengVin Drift til ny infrastruktur har vært omfattende, og vi er glad for å rapportere at det nå er fullført.</p>
+      </div>
+
+      <!-- CARD 1 -->
+      <div class="card-wrap" style="border:2px solid #b8c4d8;border-radius:14px;overflow:hidden;margin:0 32px 28px;">
+        <div class="card-inner">
+          <div class="card-illustration">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAADICAIAAADOT1zfAAAC40lEQVR4nO3cPYpTURiA4YxjGsF/nT2IIHajIoOVIIjgEuxckp0WrkDRBSgWVv4ww6zBKCqiAUlQi2ks8gqCkgv3ecoEDgfy8t3LgZyNr/PFBFY5tPJTEAd/YnKQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQDk/WZOvcnf+3+Gz//v9bfDxMDoY3OQ6cuHj33y74+fW9f7vgmJkcJHGQxEESB0kcJHGQxMFQzzmGxrnt70wOksmxgnPbAyYHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwM9e+Q7ncbMpOD4U0O98gOn8lBEgdJHCRxkMRBEgdJHCQXxq3g3PaAyUHa+Dpf9LeMmslBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMSBOPh7Jgdp7Df77LzdvnpsZ3Njc/lz+eLL82cXXq57RwMy9jjOHTl/6eiVW6dvP/n46PPy07q3Myxjf6xsTbemh6Z7890z07NnpmfXvZ1hGXsck8nk+okbD2cPto9eXvdGBkcck6efHt84efPFl+fr/i0GZ+xxzBaz7z++7xy/Nlu8+7B4v+7tDMvYX0j353unDp968+3V8udyb7677u0Mi6smSWN/rPAH4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjiYlF86Kk/7arFO6AAAAABJRU5ErkJggg==" alt="Server stabilitet">
+          </div>
+          <div class="card-content">
+            <span class="card-badge">FULLFØRT</span>
+            <h2 class="card-heading">Serverne er flyttet</h2>
+            <p class="card-subheading">Stabil drift oppnådd</p>
+            <ul>
+              <li><span style="color:#f47c20;padding-right:6px;">▪</span>Alt av servere er nå migrert</li>
+              <li><span style="color:#f47c20;padding-right:6px;">▪</span>Plattformen kjører stabilt</li>
+              <li><span style="color:#f47c20;padding-right:6px;">▪</span>Ingen nedetid rapportert</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="card-wrap" style="border:2px solid #b8c4d8;border-radius:14px;overflow:hidden;margin:0 32px 28px;">
+        <div class="card-inner">
+          <div class="card-illustration">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAADICAIAAADOT1zfAAADqklEQVR4nO3dMW4cVQCA4ZcE0VjQIQRFClCgQZG4ADSIFomKs/gAe4bcAa4AJQVVSOsOFBAFDbCRUEBCkRXLAv+Js/F6mTffJxeWdz070vvnzTyvxnvjj0ePB1zk5oU/BXHwLGYOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iC9MlZuc+c5Tzg+GWt1Y6Uf4/XcJv5rfZWsLI4Lm3jGqG9e8PlzWVMc50d6hwHevNyvL9A64rjCcd2sKJEVxHE2nFc4lps9bPP/Z/al7J5G8fhk9wvb5Zh65jgdub0e3Jv9v8ThzDtzXOcxvZlz/pg3jlP7PqaP55wzlnxaWeiRerywkmafOXgJ4mDSN96Obl9wftn+cFIP7c+2X/T0oSUyc5DEQRIHSRwkcbCmOE6XDNe5RtgeYn10DSaMg6syZxzXOXlsJ502po3jzL772C72D1yrjuM6D+WjGaeNmeM4f3LZx/G9fbrZWcuYPI7zI3e1fWyfbm3iMuaP4199vHwi23MbmbuMxb8ru8PiZedzwfZcWNNnsaI4Th3dvnM2wJcc6e1FM81KylhXHHUJcslzzdFqmlhpHDtcqB6tr4m1x3FmzWP/XPOvVtiZOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOJj0dsi5/yXXwZk5SOJgso/x4lqYOUjiIImDJA6SOEjiIImDJA6SOBAHL87MQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRxMelPTpWzujPc+GTdvjb//Gidfj2P3QV3WCuJ4++549+Px4Rfj+y/Ho18PvTdLsoLTyutvjVuvjof3x2tvPvni0lYQxxjjg8/Gt/fGOx8dej8WZh1xPPhq3P18nHxz6P1YmBXE8dvP4/Gf4/1Pn3zz+y+H3pslWcEF6U8PxtEb48fvnqxWHt4/9N4siRupWfNphV2JgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQORvkHq2+4VsTB9+wAAAAASUVORK5CYII=" alt="VPN sikkerhet">
+          </div>
+          <div class="card-content">
+            <span class="card-badge">PLANLAGT</span>
+            <h2 class="card-heading">VPN-oppdatering</h2>
+            <p class="card-subheading">2-faktor autentisering</p>
+            <ul>
+              <li><span style="color:#f47c20;padding-right:6px;">▪</span>Oppgradering over sommerferien</li>
+              <li><span style="color:#f47c20;padding-right:6px;">▪</span>Økt sikkerhet med 2FA</li>
+              <li><span style="color:#f47c20;padding-right:6px;">▪</span>Enkle oppgraderingstrinn</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="card-wrap" style="border:2px solid #b8c4d8;border-radius:14px;overflow:hidden;margin:0 32px 28px;">
+        <div class="card-inner">
+          <div class="card-illustration">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAADICAIAAADOT1zfAAAFKklEQVR4nO3cf2jUdRzH8ffdbj90brvbds6N1NiWm4o/mfQDc2YrIgOhKFqEZP0RUlR/2EQDq1GSRFB/xJxEKSyMapiIEJY6JYqx1qT+WG1tTaPJuN1+nue6H7sYA/9oe0VhcNz3no8/v7z58uHuyefzveM4VygcNWA+7nmvAsSBf8LOAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKA5DEHWVHfXlfjy3C7YvHE2c7RnuO3J3tFqc1RcaytWLRlvffxexd/dj4QnIgmezkpz1HHSmlRVpbHdak3VFKYWeLLSvZyUp6j4jCzHZuLm08OblnnTfZCnMBpcbReCDxc6z/3w2iyF+IEjorjajAyFZm+b5PvajAyNBpJ9nJSnqMeSH/sC/m9mR3dk7F44lJvKNnLSXmuUJineqTBsYL/F3FAIg5IxAGJOCARByTigEQckIgDzvr6fEV9u6WgnlT78RE7ByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5I/EktJHYOSMQBiTggEQck4oBEHJCIAxJxQCIOEAf+O3YOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSB5zrs/bAq1tgWtT8YYnlm1eWzAZju9t6huZjBXmeQ7trshbmDF3Zjphbx67/FN/yJPhOrS7Yuni7NlbXf9zet/h/uHx6LWp+IuP3rJ1g9fSgGN3jpGJ6ImLgY9fXfXuC5VvHLtsZk1f/LGpOu+T11bVVOc1nxycd+b410O5C9yfNq7e9WDpWy0zV2a1nBlaU5HbcmDlkYaq1z8csPTg2DjGQrEn71/idllpUfZYKGZmF7rGtt9VZGbb7yxq6xqdd+bUN8FHav1mtnWDd/1teTfu9tg2/84HlphZ7+9hj8dl6cGxx0p52YLysgVm9mX7yLaNM6fA8Hi02JtlZn5f1vB4bN6Z365eP9c5erZzLD8345Wdy2/crSB35oV6+f2+Mx0jh/dUWXpw7M4x68rQ1AenBvfUL/2XM9FYosyf3XJg5Y67i/c19/9t8u3nKt55vvLExYClByfHEZ6Kv/TerwefLS/MzzSz4oLM4bGImQVGI8UFHjVTV+Mzs7oa3y9Xwjdu1Xh0IB5PmNk9G73nu8YsPTg2jkTCGpr6n36odF3lotkrtRu8p78Nmtnp74K1673zztyxOr+je9LMOronq5cvnK3HzELh+FffzzymdPWEyktzLD049u+tW9sCjUcH1pTPvOsLc9xHGqrmfpSdOxOciO5v7g9PTWdkuBqfuXVZSc6ugz9/tL96cDiyt6lvOpHI9LgPPLV89knF8RwbB26eY48V3DzigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDpvwFuFFTjsYiJisAAAAASUVORK5CYII=" alt="Oppgradering">
+          </div>
+          <div class="card-content">
+            <span class="card-badge">KOMMENDE</span>
+            <h2 class="card-heading">Neste steg</h2>
+            <p class="card-subheading">PengVin 2026.3 & server</p>
+            <ul>
+              <li><span style="color:#f47c20;padding-right:6px;">▪</span>Oppgradering til versjon 2026.3</li>
+              <li><span style="color:#f47c20;padding-right:6px;">▪</span>Servermigrering planlegges</li>
+              <li><span style="color:#f47c20;padding-right:6px;">▪</span>Detaljert plan kommer snart</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="card-wrap" style="border:2px solid #b8c4d8;border-radius:14px;overflow:hidden;margin:0 32px 28px;">
+        <div class="card-inner">
+          <div class="card-illustration">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAADICAIAAADOT1zfAAAE8UlEQVR4nO3Xf2jUdRzH8ff37nbTjTt1ty0mFXpHzjRHcYrDskVpkIWGQVj9U4zYIsg/hMKFfwS1w9ofSRBNijALg/wjE1Ihg0ikxYpLUKoLxV9byTbWdl26u9vFMTW5+QqSxvX93vPB/fH9fr53fD/c98nn+/066UzWgOvxXXcUIA78E1YOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJAC5j3dt9miNebzWz5nqcPWlSr3hNzKi3HMb7FYm921yX74xDLD5Z6Ni3nxthJuMn/QzictdFPxgxvlxTjM7I4NdvQdi95b7nm4m0fjOLbXWjZa6styz8PdvBjH2KBlL1nzg8WN8d/KPRsX8+ID6cAxq22ws98W31bOJ8s9Gxdz0plsueeA/ykv3lbwHyEOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIA8SBf4+VAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBKWBudvzUHz17zubyBb/fSXREmyLBmThL776Bjg3zrfK4e+XY2nsy0Rndve32J9Y0bv/wzAydZednA1aR3L1yDP+evTQxaWYPxOdFwlVmFm/v/+695VNHr27H2/sfv78xmUo7jr3+XOzmxuqSkeqgb2vvyczFfM0sf6Ij2jC3Kt7ev3ZF3ZIFNaPpXObi5DPdP77ftdgqjLvj2LLplidfOdF259z199S3Lg2rr01kC8uitS89deu+I0Pdu0+/vWVRycjsat8jqyKPrq7/9Ouh7R+d6Xk+NpEtPLwqsrpljpntOvBrBZbh+tvKxraGz3ta4s2h1z44/dbecyVHJwuXNxzH1q6oM7OHVtYlU+npI30nxte1FnfXtdZ9c3ys+L/47O5lxTIqmYvjGBnLfv/z+JzawGP3Nex6efGeLy5cG8RYJp/NXd5xnOLFnhKscqaPFApXfnZFwO/4il+saC6Ow3GczTt+GRyeMLPRdK6pvviqEprtT53708z2Hxm6enHzk/ZVctTMDvSNrFwSnj7SujR8sG/EzA4Wd0MlJ5os/N1cRXHxM8e8UODVZxe+8GZqVtDn81miI2Zm255esHlHKhKuaonVTi0SZlZd5RzqG3l3/2C4JtDdsXD6SC5f6Oo99fHhCzXV/kRntOREy5tDnW/8tPPFZqswTjqTNa+79hVGjcBTtxXMtIpYOXBjWDkgEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOSMQBiTggEQck4oBEHJCIAxJxQCIOmPIXYH8I3REwcuMAAAAASUVORK5CYII=" alt="Support">
+          </div>
+          <div class="card-content">
+            <span class="card-badge">TILGJENGELIG</span>
+            <h2 class="card-heading">Support i sommer</h2>
+            <p class="card-subheading">Vi er her når du trenger oss</p>
+            <ul>
+              <li><span style="color:#f47c20;padding-right:6px;">▪</span>Fullt supportteam på plass</li>
+              <li><span style="color:#f47c20;padding-right:6px;">▪</span>Rask respons på henvendelser</li>
+              <li><span style="color:#f47c20;padding-right:6px;">▪</span>Kontakt post@pengvin.no</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="card-wrap" style="border:2px solid #b8c4d8;border-radius:14px;overflow:hidden;margin:0 32px 28px;">
+        <div class="card-inner">
+          <div class="card-illustration">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAADICAIAAADOT1zfAAACu0lEQVR4nO3WT4tNYRzA8eeeJhuMNbHDgiJZSF6SN8ArGG/A+7GxY1KSIhTKYlb+bTBzlNU05ivKNM29n8/ud87t9Cy+/e6z2NjcGrCfad+nIA7+xOYgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYO0NpbOnW93X06XdsY0je0LO8/HGLvHe8c2DvuAR8YSxvFhce7VdPHJdOPqzqPj89fFmHePh326o2QJ4/i0OLU91s7Mbz+P9c+L9THGnpGVvnM8m67d3H7werq478hKx3Fl5/HT6fr5XxeO30dWN471+ePa/P3FdHl9fDw5f9ozHvbpjpIlvHOcnt99mU+c+/FmGttn5rdjjD0jf2mxsbn1t79lxSzh3wr/izhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJA3Hw72wOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhIa+PA3Hp//+A+zm4Pz94eB8DmIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEiLjc2tfstKszlI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4mCUn/W4Y0LAIlELAAAAAElFTkSuQmCC" alt="Sommerferie">
+          </div>
+          <div class="card-content">
+            <span class="card-badge">ØNSKE</span>
+            <h2 class="card-heading">God ferie</h2>
+            <p class="card-subheading">Nyt sommeren</p>
+            <ul>
+              <li><span style="color:#f47c20;padding-right:6px;">▪</span>Vi ønsker deg en fin ferie</li>
+              <li><span style="color:#f47c20;padding-right:6px;">▪</span>Kom tilbake uthvilt og frisk</li>
+              <li><span style="color:#f47c20;padding-right:6px;">▪</span>Sol og avslapping venter!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- VALUE STRIP -->
+      <div class="value-strip" style="margin:8px 32px 28px;background-color:#050e2b;background:linear-gradient(135deg,#050e2b 0%,#0a1f5c 100%);border-radius:14px;padding:28px 32px;">
+        <h3 style="color:rgba(255,255,255,0.55);">Hva betyr dette for deg?</h3>
+        <div class="value-points">
+          <div class="value-item">
+            <div class="value-icon">⚡</div>
+            <div class="value-label">Raskere</div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🔒</div>
+            <div class="value-label">Sikrere</div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">📈</div>
+            <div class="value-label">Bedre</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="footer" style="background-color:#050e2b;padding:18px 40px;">
+        <img src="data:image/png;base64,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" class="footer-logo" alt="PengVin logo">
+        <div class="footer-contact">
+          <a href="mailto:post@pengvin.no">post@pengvin.no</a> | +47 902 92 050 | <a href="https://www.pengvin.no">www.pengvin.no</a>
+        </div>
+      </div>
+      <div class="footer-revised" style="background-color:#050e2b;padding:12px 40px;text-align:center;font-size:10px;color:rgba(255,255,255,0.35);border-top:1px solid rgba(255,255,255,0.1);">
+        © 2026 PengVin AS
+      </div>
+    </div>
+  </div>
+</body>
+</html>
