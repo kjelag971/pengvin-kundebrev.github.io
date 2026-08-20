@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PengVin Kundebrev - August 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #050e2b;
+      --blue-mid: #0a1f5c;
+      --blue-light: #1a4fc4;
+      --orange: #f47c20;
+      --orange-light: #ff9a45;
+      --gray-light: #f4f6fb;
+      --gray-mid: #e2e8f4;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #dde4f0;
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-weight: 400;
+      color: #1a2340;
+      -webkit-font-smoothing: antialiased;
+    }
+    .browser-link {
+      text-align: center;
+      padding: 10px 0 4px;
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: 12px;
+      color: #6b7a9e;
+      background: #dde4f0;
+    }
+    .browser-link a {
+      color: #1a4fc4;
+      text-decoration: underline;
+    }
+    .email-wrapper {
+      width: 100%;
+      background: #dde4f0;
+      padding: 32px 16px 48px;
+    }
+    .email-container {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(5,14,43,0.18);
+    }
+    /* PREHEADER */
+    .preheader {
+      display: none;
+      max-height: 0;
+      overflow: hidden;
+      font-size: 1px;
+      color: #dde4f0;
+      line-height: 1px;
+      max-width: 0;
+    }
+    /* HEADER */
+    .header {
+      position: relative;
+      overflow: hidden;
+      padding: 26px 48px 28px;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: rgba(244,124,32,0.13);
+      pointer-events: none;
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: rgba(26,79,196,0.18);
+      pointer-events: none;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 2;
+    }
+    .header-logo {
+      height: 36px;
+    }
+    .header-badge {
+      background: linear-gradient(90deg, #f47c20, #ff9a45);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+    .header-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      font-size: 34px;
+      color: #ffffff;
+      line-height: 1.15;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 6px;
+    }
+    .header-subtitle {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
+      position: relative;
+      z-index: 2;
+    }
+    .header-divider {
+      height: 5px;
+      background: linear-gradient(90deg, #f47c20, #1a4fc4);
+    }
+    /* CONTENT */
+    .content {
+      padding: 36px 40px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #1a2340;
+    }
+    .intro {
+      margin-bottom: 32px;
+    }
+    .intro p {
+      margin-bottom: 12px;
+    }
+    .intro strong {
+      font-weight: 600;
+      color: #050e2b;
+    }
+    /* CARD */
+    .card-wrap {
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 0 0 28px 0;
+    }
+    .card-inner {
+      display: flex;
+      align-items: flex-start;
+      background: #fff;
+    }
+    .card-illustration {
+      width: 130px;
+      min-height: 200px;
+      background: linear-gradient(160deg, #f4f6fb 0%, #e2e8f4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      flex-shrink: 0;
+    }
+    .card-illustration img {
+      width: 90px;
+      height: 100px;
+      object-fit: contain;
+    }
+    .card-content {
+      flex: 1;
+      padding: 28px 28px 24px 24px;
+    }
+    .card-badge {
+      display: inline-block;
+      background: #f4f6fb;
+      color: #0a1f5c;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .card-heading {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      font-size: 22px;
+      color: #050e2b;
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+    .card-subheading {
+      font-size: 13px;
+      color: #6b7a9e;
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+    .card-list {
+      list-style: none;
+      padding: 0;
+    }
+    .card-list li {
+      padding: 8px 0 8px 0;
+      font-size: 13px;
+      color: #1a2340;
+      line-height: 1.5;
+    }
+    .card-list li span {
+      color: #f47c20;
+      padding-right: 6px;
+      font-size: 13px;
+    }
+    /* VALUE STRIP */
+    .value-strip {
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin: 8px 0 28px 0;
+    }
+    .value-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .value-points {
+      display: flex;
+      gap: 16px;
+      justify-content: space-between;
+    }
+    .value-point {
+      flex: 1;
+      text-align: center;
+    }
+    .value-icon {
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+    .value-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.4;
+    }
+    /* CTA BANNER */
+    .cta-banner {
+      border-radius: 14px;
+      padding: 32px 36px;
+      text-align: center;
+      margin: 0 0 32px 0;
+    }
+    .cta-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .cta-text {
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .cta-button {
+      display: inline-block;
+      background: #fff;
+      color: #f47c20;
+      font-family: 'Outfit', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .cta-button:hover {
+      background: #f4f6fb;
+    }
+    /* FOOTER */
+    .footer {
+      background: #050e2b;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      color: rgba(255,255,255,0.65);
+    }
+    .footer-logo {
+      height: 22px;
+    }
+    .footer-contact {
+      text-align: right;
+    }
+    .footer-contact a {
+      color: #ff9a45;
+      text-decoration: none;
+    }
+    .footer-revised {
+      background: #050e2b;
+      padding: 0 40px 12px;
+      text-align: center;
+      font-size: 10px;
+      color: rgba(255,255,255,0.35);
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    /* RESPONSIVE */
+    @media (max-width: 480px) {
+      .email-wrapper {
+        padding: 16px 8px 24px;
+      }
+      .header {
+        padding: 20px 24px;
+      }
+      .header-title {
+        font-size: 26px;
+      }
+      .content {
+        padding: 24px 20px;
+      }
+      .card-inner {
+        flex-direction: column;
+      }
+      .card-illustration {
+        width: 100%;
+        min-height: 120px;
+      }
+      .footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+      .footer-contact {
+        text-align: center;
+      }
+      .value-points {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="browser-link">
+    Vises ikke riktig? <a href="https://kjelag971.github.io/pengvin-kundebrev.github.io/PV_KUNDEBREV_AUGUST2026.html">Vis i nettleser</a>
+  </div>
+  <div class="email-wrapper">
+    <div class="email-container">
+      <div class="preheader">Høsten er her – en spennende fase for PengVin. Les mer om migrering, SaaS og oppgraderinger.</div>
+
+      <!-- HEADER -->
+      <div class="header" style="background:#050e2b;background:linear-gradient(135deg,#050e2b 0%,#0a1f5c 60%,#1a4fc4 100%);">
+        <div class="logo-area">
+          <img src="data:image/png;base64,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" alt="PengVin" class="header-logo">
+          <div class="header-badge">Kundebrev</div>
+        </div>
+        <div class="header-title">Høsten er her</div>
+        <div class="header-subtitle">En spennende fase for PengVin</div>
+      </div>
+      <div class="header-divider"></div>
+
+      <!-- CONTENT -->
+      <div class="content">
+        <div class="intro">
+          <p><strong>Kjære kunde,</strong></p>
+          <p>Ferien er over, og vi er godt i gang med en spennende høst. De siste månedene har vi gjennomført flere viktige satsinger som skal gjøre PengVin mer moderne, effektivt og fremtidsrettet for alle våre kunder.</p>
+        </div>
+
+        <!-- CARD 1: Migrering -->
+        <div class="card-wrap" style="border:2px solid #b8c4d8;border-radius:14px;">
+          <div class="card-inner">
+            <div class="card-illustration">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAADICAIAAADOT1zfAAADjklEQVR4nO3dsXETQRTHYZshI6IIaIFaaIICVIALoAlqoYWlCCdAQkKggfEM/svY2rt7u/t9oQlkTr95kk93T7fff/66gce8evSnIA4uMTmIxEEkDiJxEImDSBxE4iASB5E4iMRBJA4icRCJg0gcROIgEgeROIjEQSQOInEQiYNIHETiIBIHkTiIxEEkDiJxEImDSBxE4iASB9Hr/E887f3Hrzcv0r58uCnv1k6wTSMYOhpxHB9E2VDEUSuIUqGIo3QTx1Yyahy93gkOlMX+iVSPY9Anb45KKsYhiCKJVIlDEAX7ODgOTVRO5Jg4NDFEH3vHIYuB+tgvDlkM18cecchi0D62jUMWQ/ex4fUcyjjclU/BJtdzyGIO/SeHMqbROQ5lVHPNM9IzDmVMplscyphPnziUMSW3JrBlHMbGrOfBro1DGRPzskIkjpm1Az9b8Zoy96eyJsecWo/rOcQxodbpSjBxzKb1u4ZUHFNpXa8+t59jEm2D+1ZMjhm0mne8+Wt24ntlvawMqe1yl704BtPG2s/hlWUHA2/20ceUO8G8rNTSjg5ikzveDI9xI9jjdkh9jFjATifBRj8WfbXxj0bnM6QTHJEu2hTHof/p8zmOyzWmOQIbrmBY8C1ImyWLzT94m+xILfj/tdmngzZdFmd2gl2lTZrFmW2CL9SmzuLMHtJnawtkcWaD8f9qyzTxl93nT2jrNVEujlInSFYOonocD635zXtFVI9jze/sLGLUONiB+1aIxEEkDiJxEImDSBxE4iASB5E4iMRBJA4icRCJg0gcROIgEgeROIjEQcGdYHfvDnvoEZ2+7f+YJgdVtwm+/fzm2F+gvvtPP456aJODSBxE4iASB5E4iMRBJA4icSAOns/kIBIHkTiIxEEkDiJxEImDSBxE4iASB5E4iMRBJA4icRCJg0gcROKg6u2QB97rx5NMDiLf1ERkchCJg0gcRNY+DeJk7ROVWPtU3b21TxTkDSmROIjEQSQOInEQiYNIHETiIBIHkTiIxEEkDiJxEImDSBxE4iASB5E4iMRBJA4icRCJg0gcROIgEgeRtU9EJgeRtU8P3L07duVBNSYHkTiIxEEkDiJxEImDSBxE4iBa/iTYwxNfjzqtezZs+clx+bk/rVuGOLhk+clxYTyclh4b4uASkyMMidPqY0McXGJy/GFU/EMcROIgEgfR8qfPyUwOInEQiYOb5Dc37RGbgY1jagAAAABJRU5ErkJggg==" alt="Server-migrering">
+            </div>
+            <div class="card-content">
+              <div class="card-badge">INFRASTRUKTUR</div>
+              <div class="card-heading">Migrering til Aderian</div>
+              <div class="card-subheading">Ny driftsplattform og modernisering</div>
+              <ul class="card-list">
+                <li><span>&#9658;</span>Flytting fra Globetech til Aderian</li>
+                <li><span>&#9658;</span>Moderne servere og infrastruktur</li>
+                <li><span>&#9658;</span>Grunnlag for videre innovasjon</li>
+                <li><span>&#9658;</span>Kunder fulgt opp gjennom prosessen</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: SaaS/ONE -->
+        <div class="card-wrap" style="border:2px solid #b8c4d8;border-radius:14px;">
+          <div class="card-inner">
+            <div class="card-illustration">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAADICAIAAADOT1zfAAAEPElEQVR4nO3dMY5bVRTH4ReUNUyTmkgU1DTsgBUgQcE2aBAN26AAiRWwAxpqCqSbmmZqlCYNBQhFaP6OZ4jvPee+7+uSjF6eT34+tt+MnWd/vn5zwEM+ePB3QRxcYnMQiYNIHETiIBIHkTiIxEEkDiJxEImDSBxE4iASB5E4iMRBJA4icRA9P87q5ee/Xv/F46dPjvN5dp4fMH5UDZedpJX943iPTZytkm3juGkTJ6lktzgmN7F3JfvEsTyL/RLZ5KVsqTKOeudz0s1R/J9hdF4hvTdH8TKODme44eZoN/TRcIW03Bztyjh6nnO/ODpOuemZN4uj3Xxbn3+nOHpNdoNb0SaORjPd5rb0iKPLNDe7RT3iYInq1zla3MN2vf5RN47ts6ifSMU4TpVF5UTKPec4bRlHvdteaHNUG81CRVZIlc2hjILTWL85igyiprF0hSzeHMqoPJ+Vm+PCLR8ff3GczMvffqy2P5ZtDjuj/qzWxKGMFhNbEIcyusxtdhzKaDS9qXEoo9cM58WhjHaTnBSHMjrOs8rlcwqaEYe10XSqNgfr4rA2+s7W5mBRHNbGrd10wjYHkThYEYfHlDluN2ebg0gcROIgEgfd/teECz9tyzQ2B5E4iMTBojc1Pfn6zB+ffXss8uLnb5ac1Yv89152u7c82RxE4mBRHEU+Z2Jj45YTtjlYF4fl0Xe2NgdL47A8mk7V5mB1HJZHx3nO2xz6aDfJqQ8r+ug1w9nPOfTRaHoLnpDqo8vc1rxa0UeLiS17KauP+rNa/PHW3vhU+V60+CKY/VF5Pus/GP9vVkjBu02Vy+cVZlHHqDGNKpvjXydfIaNGFrU2R83pnPy2l9sc51who1gW1eM4SSKjZBY94ti1klG4iX5xbJPI6JBFyzj6VjL6NNE+ji6VjIZN7BNHwVBG5yC2jWNVK2OXGk4Uxy2KGZt28KDTxUHjy+fUIQ4icRCJg0gcROIgEgeROIjEQSQOInEQiYNIHETiIBIHkTiIxEEkDiJxIA4ez+YgEgeROIjEQSQOInEQiYNIHETPj1buPvrq7V/e//79mY98a23eZf+fEb/HcXc88hw9HlYuTPmdf7rfkadpEMc1c3zarDseeabqcVw/wcfOuuORJ6seBwuVjqPOXfauwJHnKx0Ha4mDSBxE4qBnHI+9jHj913c88nyl42Ct6nFUuMvelznyZNXjuHKCT5tyxyPP1CCOd87x/0y545GnafMt+7evJ95/+cvR0N0Pn3bJomUc//juw6Ojr18drfSMgyl6POdgCXEQiYNIHETiIBIHkTiIxEEkDiJxEImDSBxE4iASB5E4iMRBJA4icRCJg0gcROIgEgeROIjEQSQOInEQiYNIHETiIBIHkTiIxEEkDiJxEImDSBxE4iASB5E4iMRBJA4icRCJg0gcROIgEgeROIjEQSQOInEQiYMj+QsszoDTCeJ2QwAAAABJRU5ErkJggg==" alt="PengVin ONE og SaaS">
+            </div>
+            <div class="card-content">
+              <div class="card-badge">NYHET</div>
+              <div class="card-heading">PengVin ONE & SaaS</div>
+              <div class="card-subheading">Helhetlig plattform for fremtiden</div>
+              <ul class="card-list">
+                <li><span>&#9658;</span>ERP, drift, support i én plattform</li>
+                <li><span>&#9658;</span>Automatiske oppgraderinger</li>
+                <li><span>&#9658;</span>Bedre sikkerhet og AI-grunnlag</li>
+                <li><span>&#9658;</span>Raskere innovasjonssyklus</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: Oppgradering -->
+        <div class="card-wrap" style="border:2px solid #b8c4d8;border-radius:14px;">
+          <div class="card-inner">
+            <div class="card-illustration">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAADICAIAAADOT1zfAAACqElEQVR4nO3dMU4bUQBFURORBdBlA9BFSvaTlbCAWUn2k0jpyAboaBCNm0ik9QVDnOEP/5ySgvnSXD1bsgfO7h/2Ozjkw8Gfgjh4iuUgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYN0vhvEcvlml77+vbFTrcVyMP5yPLr69X3Ny918/rbdU63AcpDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEwUYehxznScDxT7UCyzHMY/XjObt/2L/1GcYrY4A/fzACy0ESx6EXFC8uj8QRNSzefIiDZjl6JJbZx2P6OJ4uYJm6j+njoM0dxzHDsMw7HhPHcfxdXybtY+I4eM6scbx0DJYZx2PKOF53p5fp+pgyDo4zXxz/MgDLXOPhI/u48dc+tZ9wOTiaOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA7EwctZDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYPkX4eSLAdJHCRxkM53Y7j49GW1a93d/nzHhzwhy8Hwy/HXx4uv//X37+9+THLIk7AcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcJHGQxEESB0kcbOTb5+N88XrrhzwJy0HylD3JcpDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHu/IHZdM++tpCiJQAAAAASUVORK5CYII=" alt="Oppgradering">
+            </div>
+            <div class="card-content">
+              <div class="card-badge">OPPGRADERING</div>
+              <div class="card-heading">Modernisering av installasjoner</div>
+              <div class="card-subheading">Nyere versjoner for alle</div>
+              <ul class="card-list">
+                <li><span>&#9658;</span>Oppgradering til nyere PengVin-versjoner</li>
+                <li><span>&#9658;</span>Gjennomgang av rapporter og prosesser</li>
+                <li><span>&#9658;</span>Testløp og kvalitetssikring</li>
+                <li><span>&#9658;</span>Tilpassning og produksjonssetting</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4: Ny versjon -->
+        <div class="card-wrap" style="border:2px solid #b8c4d8;border-radius:14px;">
+          <div class="card-inner">
+            <div class="card-illustration">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAADICAIAAADOT1zfAAAFrklEQVR4nO3dX2iVdRzH8e8O5oUeNjfn9KIoI7uJ7rwaLLJssWWkCROx0RS0qJBgFu0EERYPtEhrlaQXopaLXYxAWiclU1x/MKaQ1MUUGpXEXBvTmrtpjIgR6DyfbWd6zvN99nu/7jYe2L4/3s9vO4dzzq9kZPQfA3JJ5fwuQByYCjsHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScSBxcUQrLCiRx3m9xgEHUn5vI5c3U1DzuowDPviL49obyN/NFNS8/uKAGyVxfprgrG+UzAVLoihh88a6c8xu5oSWYcmbN9adI99bKrlZJHNeH/9zzGQV4l6pAOf1Ece0a+FgpQKc100c8CeVjD/Dzp4ACGReN3G43FcDnzfld6VcrldQ884zVyYt0MSXPvbYAOf1sXNMLIe6dZwtWTjz+ogjIQ/tQpvXxzOkcMnNzgF/iAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMSccDhWxMcvLo6STIxvOSYnQMSccDxO97K2xbG/Sv4Nbz9aow/nZ0DEnFAIg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnEgljh4fXlxFGyd2TlQ/Di8ns8+10QFXGd2DhQ5Dsfns88pUWHXmZ0DhTtv5aaD5U1NhX1T0028yTYV2vnsSZWJYZ1vxdsh8zqTjCySs86poM5nb2pcd+LLQz3fdj7yULWZlZWmO9vbTh79uLO9raw0nfOaVCq1u7Wl+6vDX2cPLr/rdotdEdc5Fc6hdksqyxs3PvFwfdOmzTt2vdViZq/seKb7uzMPPtr4zfdnX27emvOabVsa/h4ZrVm96b09h1rffMk8KNY6B/RopaJi0Z59n46Pj1+82F9RscjM6mprOjqzZtbR+UV97QM5r9nYsObgJ5+ZWfboqdM9P1pI5hX1fPZYN4/e83295/vM7Mm1tV3Zk2ZWVbX40qVBM+vvH6yqqsx5zYp77ny8ftWaulWXL19pbmk1D4q1zoXcOeL+O5LT3cvvaN6++dXXd83wmvnzb/v1tz9WP9Z0uOPzfR/uNIcKts6poM5nTy9c0H7gnW0vvPbn4LCZDQwMLV3634axbFnlwMCguuZI13EzO9J1/P777jVvCrnOBYgjc+G633XSl/EpKSnZvzfa/f6BH3rOTXwne6x7w/o6M9uwvj57rDvnNSdOna6pXmlmNdUrz/3Ua34Ufp1v3YnUU5/PfuMF///hLNozpE8/te7dtzNnzv5sZiNXR9c2PFdWmt7/UbR4cfnQ0PCWZzNX/hq58ZqqJRV7P3gjnV4wNjb2/Is7f+n73WJ5hnTSus18nb3EMe0vdO01RY8jiYZzxpHXOifyLHvimF0cRRTQ8xzIF3FAIg5IxAGJOCARByTigEQckIgDEnGAOJA/dg5IxAGJOCARByTigEQckIgDEnFAIg5IxAGJOCARByTigEQckIgDEnGgOJ/sE9dHbaIw2DkgEQccfgQD3PO6c4R21kLkcV6vccABl3GEdspT5HRel3HAB39xhHbKU+R3Xn9xwI1YH8rO+kbx8am3c37eWHeO0E55yiRsXh9PgoV2ylOUjHl9/M+RhFOeApzXRxzuT3kKc143ccAfN3FMe/rQHBMlYF43cbjcVwOf12UcLk95CnDe+F8meJ1JC5TXMbtJlHE9r4+dY+rDhZwtWTjz+ogjIQ/tQpvXxzOkcMnNzgF/iAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHJOKARByQiAMScUAiDkjEAYk4IBEHTPkXrkHP7g4SGvsAAAAASUVORK5CYII=" alt="PengVin 2026.3.2">
+            </div>
+            <div class="card-content">
+              <div class="card-badge">LANSERING</div>
+              <div class="card-heading">PengVin 2026.3.2</div>
+              <div class="card-subheading">Nye funksjoner og forbedringer</div>
+              <ul class="card-list">
+                <li><span>&#9658;</span>Forbedringer og nye funksjoner</li>
+                <li><span>&#9658;</span>Kontinuerlig utvikling</li>
+                <li><span>&#9658;</span>Se leveransedokumentet for detaljer</li>
+                <li><span>&#9658;</span>Årsverjoner 2025 og 2026</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- VALUE STRIP -->
+        <div class="value-strip" style="background-color:#050e2b;background:linear-gradient(135deg,#050e2b 0%,#0a1f5c 100%);margin:24px 0 28px 0;">
+          <div class="value-title" style="color:rgba(255,255,255,0.55);">Hvorfor er dette viktig</div>
+          <div class="value-points">
+            <div class="value-point">
+              <div class="value-icon">&#x1F4DE;</div>
+              <div class="value-label" style="color:rgba(255,255,255,0.7);">Raskere support og oppdateringer</div>
+            </div>
+            <div class="value-point">
+              <div class="value-icon">&#x1F6E1;&#xFE0F;</div>
+              <div class="value-label" style="color:rgba(255,255,255,0.7);">Bedre sikkerhet og pålitelighet</div>
+            </div>
+            <div class="value-point">
+              <div class="value-icon">&#x1F4CA;</div>
+              <div class="value-label" style="color:rgba(255,255,255,0.7);">Moderne og fremtidsrettet løsning</div>
+            </div>
+            <div class="value-point">
+              <div class="value-icon">&#x1F514;</div>
+              <div class="value-label" style="color:rgba(255,255,255,0.7);">Kontinuerlig innovasjon</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA BANNER -->
+        <div class="cta-banner" style="background-color:#f47c20;background:linear-gradient(135deg,#f47c20 0%,#ff9a45 100%);box-shadow:0 6px 24px rgba(244,124,32,0.25);">
+          <div class="cta-title" style="color:#fff;">Lær mer om PengVin 2026</div>
+          <div class="cta-text" style="color:rgba(255,255,255,0.85);">Se komplett oversikt over nye funksjoner og forbedringer i årsverjonen.</div>
+          <a href="https://www.pengvin.se/leveransdokument/?utm_campaign=cmp_3453202&utm_source=getanewsletter&utm_medium=email" class="cta-button" style="display:inline-block;background:#fff;color:#f47c20;font-family:'Outfit',Arial,sans-serif;font-weight:700;font-size:14px;padding:12px 28px;border-radius:8px;text-decoration:none;">Se leveransedokumentet</a>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="footer" style="background:#050e2b;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;">
+        <img src="data:image/png;base64,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" alt="PengVin" class="footer-logo" style="height:22px;">
+        <div class="footer-contact" style="text-align:right;font-size:11px;color:rgba(255,255,255,0.65);">
+          <a href="mailto:post@pengvin.no" style="color:#ff9a45;text-decoration:none;">post@pengvin.no</a> |
+          <a href="tel:+4790292050" style="color:#ff9a45;text-decoration:none;">+47 902 92 050</a> |
+          <a href="https://www.pengvin.no" style="color:#ff9a45;text-decoration:none;">www.pengvin.no</a>
+        </div>
+      </div>
+      <div class="footer-revised" style="background:#050e2b;padding:0 40px 12px;text-align:center;font-size:10px;color:rgba(255,255,255,0.35);border-top:1px solid rgba(255,255,255,0.1);">
+        © 2026 PengVin AS
+      </div>
+    </div>
+  </div>
+</body>
+</html>
